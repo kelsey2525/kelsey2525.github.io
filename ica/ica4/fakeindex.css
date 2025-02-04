@@ -1,0 +1,17 @@
+p {
+    font-size: 100px;
+    color: pink;
+    background-color: floralwhite;
+}
+.test{
+    font-family: Arial, Helvetica, sans-serif;
+}
+#element1{
+    border: 20px solid pink
+}
+#element2{
+    border: 20px dotted paleturquoise
+}
+p:hover{
+    background-color: aqua;
+}
