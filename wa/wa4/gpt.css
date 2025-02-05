@@ -1,0 +1,80 @@
+/* General page styles */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: lightgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  /* Card container styles */
+  .card {
+    width: 300px;
+    height: 400px;
+    background-color: white;
+    border: 2px solid silver;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+  }
+  
+  /* Header and Footer styles */
+  .card header, .card footer {
+    height: 3.125em; /* 50px total height (50/16) */
+    padding: 0.625em; /* 10px padding (10/16) */
+    box-sizing: border-box;
+    text-align: center;
+    color: white;
+  }
+  
+  .card header {
+    background: linear-gradient(to bottom, dimgray, gray);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+  
+  .card footer {
+    background: linear-gradient(to top, dimgray, gray);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+  
+  /* Main business card content */
+  .card article {
+    height: 7.5em; /* 120px (120/16) */
+    background-color: rgba(0, 0, 0, 0.1); /* Semi-transparent black */
+    padding: 10px;
+    position: relative;
+  }
+  
+  .card img {
+    float: right;
+    max-height: 100%;
+    border-radius: 10px;
+  }
+  
+  /* Typography adjustments */
+  h2, p {
+    margin: 0;
+  }
+  
+  .card h2 {
+    font-size: 1.25em; /* 20px (20/16) */
+    line-height: 1.875em; /* Centering in 30px content box (30/16) */
+  }
+  
+  .card footer p {
+    font-size: 0.9375em; /* 15px (15/16) */
+    line-height: 1.875em; /* Centering in 30px content box (30/16) */
+  }
+  
+  .card article p {
+    padding-left: 10px;
+    color: lightgray;
+  }
+  
