@@ -26,7 +26,6 @@ body {
     background: linear-gradient(to bottom, darkgreen, green);
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
-    padding: 10px;
     text-align: center;
     color: white;
   }
@@ -50,5 +49,11 @@ body {
 }
   article{ 
     padding: 10px;
+  }
+  header,footer{
+    /* totalHeight: 3.125em; */
+    /* contentHeight: 1.875em; */
+    padding: 0.625em;
+
   }
   
