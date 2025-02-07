@@ -1,0 +1,61 @@
+/* General styles - put these straight into your stylesheet */
+
+body {
+    margin: 0;
+  }
+  
+  html {
+    font-family: 'Helvetica neue', Arial, 'sans serif';
+    font-size: 11.5px;
+    background-color: lightgrey;
+  }
+  
+  .card {
+    width: 400px;
+    height: 250px;
+    background-color: red;
+    border: 2px solid black;
+    border-radius: 17px;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    margin: 5em auto;
+  }
+  
+  /* Header and Footer */
+  
+  
+  .card header {
+    background: linear-gradient(to bottom, darkred, red);
+    /* make corners rounded at top */
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+  
+  .card footer {
+    background: linear-gradient(to top, darkred, red);
+    /* make corners rounded at bottom */
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+  .card header, .card footer {
+    height: 5em;
+    padding: 2em;
+    box-sizing: border-box;
+    text-align: center;
+    color: black;
+  }
+h2, p {
+  margin: 0;  
+}
+  
+article{
+    color: white;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+img {
+    width: 12em;
+    float: right;
+    
+  }
+  
