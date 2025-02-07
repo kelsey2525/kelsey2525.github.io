@@ -2,60 +2,116 @@
 
 body {
     margin: 0;
-  }
+}
   
-  html {
+html {
     font-family: 'Helvetica neue', Arial, 'sans serif';
     font-size: 11.5px;
     background-color: lightgrey;
-  }
-  
-  .card {
+}
+
+.card {
     width: 400px;
-    height: 250px;
+    height: 270px; /* Increased height */
     background-color: red;
     border: 2px solid black;
     border-radius: 17px;
     box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.5);
     overflow: hidden;
     margin: 5em auto;
-  }
-  
-  /* Header and Footer */
-  
-  
-  .card header {
+    display: flex;
+    flex-direction: column; /* Allows article to push footer down */
+}
+
+/* Header and Footer */
+
+.card header {
     background: linear-gradient(to bottom, darkred, red);
     /* make corners rounded at top */
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
-  }
-  
-  .card footer {
+}
+
+.card footer {
     background: linear-gradient(to top, darkred, red);
     /* make corners rounded at bottom */
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
-  }
-  .card header, .card footer {
+}
+
+.card header, .card footer {
     height: 5em;
     padding: 2em;
     box-sizing: border-box;
     text-align: center;
     color: black;
-  }
-h2, p {
-  margin: 0;  
 }
-  
-article{
+
+h2, p {
+    margin: 0;  
+}
+
+article {
     color: white;
     background-color: rgba(0, 0, 0, 0.2);
+    /* flex-grow: 1; Allows article to expand and push footer down */
+    padding: 10px;
 }
 
 img {
     width: 12em;
     float: right;
-    
-  }
-  
+}
+
+.mycard {
+    width: 400px;
+    height: 270px; /* Increased height */
+    background-color: pink;
+    border: 2px solid white;
+    border-radius: 17px;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    margin: 5em auto;
+    display: flex;
+    flex-direction: column; /* Allows article to push footer down */
+}
+
+/* Header and Footer */
+
+.mycard header {
+    background: linear-gradient(to bottom, hotpink, beige);
+    /* make corners rounded at top */
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.mycard footer {
+    background: linear-gradient(to top, hotpink, beige);
+    /* make corners rounded at bottom */
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.mycard header, .mycard footer {
+    height: 5em;
+    padding: 2em;
+    box-sizing: border-box;
+    text-align: center;
+    color: black;
+}
+
+h2, p {
+    margin: 0;  
+}
+
+article {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.1);
+    /* flex-grow: 1; Allows article to expand and push footer down */
+    padding: 10px;
+}
+
+img {
+    width: 12em;
+    float: right;
+}
