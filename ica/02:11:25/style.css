@@ -1,0 +1,28 @@
+p{
+    border: 1vh solid black;
+    width: 25vw;
+    height: 48vh;
+    margin: 0vw; 
+    /* 4 values: NESW, 2 values TB, 1 value all */
+    padding: 10vh 5vw 10vh 5vw;
+    /* padding doesn't get inherited btw */
+    position: relative;
+    /* top: 10vh; */
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#box1{
+ color: red;
+ border: pink;
+}
+
+#box2{
+ color: blue;
+ border: purple;
+}
+
+
