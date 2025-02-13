@@ -1,0 +1,36 @@
+
+
+#bottomImage {
+    position: relative; /* Makes it a reference for absolute children */
+    width: 100vw;
+}
+
+#bottomImage img {
+    width: 100vw;
+    height: auto; /* Maintains aspect ratio */
+    display: block;
+}
+
+#middleImage {
+    position: absolute;
+    bottom: 0; /* Aligns to the bottom of #bottomImage */
+    width: 100vw; /* Ensures it spans the width */
+    height: 5vw; /* Keep the specified height */
+    font-size: clamp(15px, 2vw, 36px); /* Min: 14px, Ideal: 2vw, Max: 36px */
+    padding: 2vw 2vw 3vw 2vw;
+    overflow: hidden;
+    z-index: 1;
+    background-color: rgba(182, 194, 220, 0.8);
+}
+
+#topImage {
+    position: absolute;
+}
+h1 {
+    z-index: 3;
+    background-image: url("logo.png") no-repeat right top;
+    
+    /* filter: drop-shadow(3px 3px 3px black); */
+    border-radius: 64px;
+    box-shadow: 3px 3px 3px black;
+  }
