@@ -1,4 +1,6 @@
-
+body {
+    font-family: 'Roboto', sans-serif;
+}
 
 #bottomImage {
     position: relative; /* Makes it a reference for absolute children */
@@ -17,15 +19,15 @@
     width: 100vw; /* Ensures it spans the width */
     height: 5vw; /* Keep the specified height */
     font-size: clamp(15px, 2vw, 36px); /* Min: 14px, Ideal: 2vw, Max: 36px */
-    padding: 2vw 2vw 3vw 2vw;
+    padding: 1vw;
     overflow: hidden;
     z-index: 1;
-    background-color: rgba(182, 194, 220, 0.8);
+    background-image: linear-gradient(to right, rgba(182, 194, 220, 0.8), rgb(239, 170, 181, 0.8));
+    box-shadow: 3px 3px 3px 3px navy;
 }
 
-#topImage {
-    position: absolute;
-}
+
+
 h1 {
     z-index: 3;
     background-image: url("logo.png") no-repeat right top;
@@ -34,3 +36,47 @@ h1 {
     border-radius: 64px;
     box-shadow: 3px 3px 3px black;
   }
+
+  body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0; /* Remove default body margin */
+    overflow: hidden; /* Optional: prevents scrolling if needed */
+}
+
+
+
+/* Top Overlay */
+#topImage {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+/* h1 Styling (Ensure it's on top) */
+h1 {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(165%, -450%);
+    z-index: 3;
+    padding: 1vw 1vw; /* Relative padding */
+    
+    background-color: red;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    box-shadow: 3px 3px 3px black;
+    color: white;
+    
+    width: 14vw; /* Adjust width based on your logo */
+    height: auto; /* Allow background image to scale */
+    
+    font-size: 2vw; /* Scales based on viewport */
+    text-align: center; /* Centers the text */
+    white-space: nowrap; /* Prevents text from wrapping */
+    line-height: 1.2; /* Adjust line height for better fit */
+    
+    
+}
