@@ -1,0 +1,66 @@
+h1{
+    color: darkgoldenrod;
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: beige;
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+nav{
+    height: 50vh;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height:20px;
+    background-color: palevioletred;
+    padding: 0.5vw;
+}
+nav a{
+    width:10vw;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+
+}
+nav a:hover{
+    background-color: rgb(221, 160, 221, 0.7);
+}
+
+img{
+    width:30vw;
+    padding:3vw;
+}
+
+.spin-image:hover {
+    transform: rotate(360deg);
+    transition: transform 1s ease-in-out;
+} 
+
+#star{
+    text-align: left;
+    font-size: 40px;
+    border-radius: 50%;
+    animation-name: star;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+}
+@keyframes star{
+    0% {
+        translate: -20vw 0;
+    }
+    25% {
+        translate: 20vw 0;
+    }
+    50% {
+        translate: 20vw 65vh;
+    }
+    75% {
+        translate: -20vw 65vh;
+    }
+    100% {
+        translate: -20vw 0; 
+    }
+    }
