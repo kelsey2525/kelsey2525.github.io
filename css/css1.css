@@ -1,0 +1,70 @@
+
+body {
+    background-color: aliceblue;
+    padding: 1vw;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+h1 {
+    padding: 3vw;
+    color: darkslateblue;
+}
+
+h1, h2, p {
+    text-align: center;
+}
+
+#intro {
+    font-size: x-large;
+    padding: 5vw;
+    background-color: white;
+}
+
+div {
+    color: blue;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    /* keeps nav bar at top and scroll item 2 */
+    background-color: lightslategrey;
+    z-index: 100;
+}
+
+nav ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    justify-content: center; /* Centers items and reduces space */
+    gap: 10px; /* Adds consistent spacing between items */
+    width: 100%;
+}
+
+nav li {
+    margin-right: 0; /* Removes extra right margin */
+}
+
+nav a {
+    display: flex;
+    color: #fff;
+    text-decoration: none;
+    padding: .5em 1em;
+}
+
+#li:hover{
+    background-color: darkslateblue;
+}
+
+/* Responsive design: Make nav bar vertical and centered when width < 500px */
+@media (max-width: 500px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav li {
+        margin: 0px 0;
+    }
+}
