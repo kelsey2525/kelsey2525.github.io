@@ -1,34 +1,90 @@
-
 body {
-    background-color: aliceblue;
+    background-color: #080b31; /* Darker space-themed background */
     padding: 1vw;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
+/* Main Content Layout */
+div[href^="C"] {
+    background-color: #140d37; /* More subtle, sleek color */
+    padding: 10px;
+    margin: 5px;
+    border: 2px solid #000000;
+    border-radius: 6px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 1); 
+}
+
+div[href^="C10"] {
+    margin-right: 0;
+    margin-left: auto; /* This ensures it stays aligned to the left */
+}
+
+/* Flexbox Layout - Default (Computer view) */
+.container {
+    padding: 1px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px; /* Smaller gap between columns */
+    justify-content: space-between;
+}
+
+.container > div {
+    flex: 0 1 calc(45% - 6px); /* 2 columns, adjusted for smaller gap */
+}
+
+/* Flexbox Layout - Mobile (Phone view) */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Change to column layout on smaller screens */
+        align-items: center;
+    }
+
+    .container > div {
+        flex: 0 1 100%; /* 1 column for phone */
+        margin: none;
+        margin-bottom: 20px;
+    }
+}
+
+/* Styling for h1 and other text */
 h1 {
-    padding: 3vw;
-    color: darkslateblue;
+    padding: 2.5vw;
+    color: whitesmoke; /* Light text for readability */
+    background-color: #000000; /* Dark blue background for header */
+}
+
+h1:hover {
+    color: rgb(248, 248, 191);
 }
 
 h1, h2, p {
     text-align: center;
 }
 
-#intro {
-    font-size: x-large;
-    padding: 5vw;
-    background-color: white;
+h2 {
+    background-color: #435594; /* Same dark blue for h2 */
+    padding: 10px;
+    border-radius: 6px;
+}
+
+h2:hover {
+    color: rgb(248, 248, 191);
+}
+
+p{
+    padding: 10px;
 }
 
 div {
-    color: blue;
+    color: whitesmoke;
 }
 
+/* Navigation Styles */
 nav {
     position: sticky;
     top: 0;
-    /* keeps nav bar at top and scroll item 2 */
-    background-color: lightslategrey;
+    background-color: #050215; /* Dark background for nav bar */
+    padding: 10px; 
     z-index: 100;
 }
 
@@ -37,28 +93,29 @@ nav ul {
     margin: 0;
     padding: 0;
     list-style: none;
-    justify-content: center; /* Centers items and reduces space */
-    gap: 10px; /* Adds consistent spacing between items */
+    justify-content: center;
     width: 100%;
 }
 
 nav li {
-    margin-right: 0; /* Removes extra right margin */
+    margin-right: 0;
 }
 
 nav a {
     display: flex;
-    color: #fff;
+    color: whitesmoke;
     text-decoration: none;
     padding: .5em 1em;
+    transition: color 0.3s ease; /* Smooth color transition */
 }
 
-#li:hover{
-    background-color: darkslateblue;
+/* Hover effect for nav items */
+nav a:hover {
+    background-color: #435594; /* Light cyan color on hover */
 }
 
 /* Responsive design: Make nav bar vertical and centered when width < 500px */
-@media (max-width: 500px) {
+@media (max-width: 768px) {
     nav ul {
         flex-direction: column;
         align-items: center;

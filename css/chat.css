@@ -1,0 +1,91 @@
+body {
+    background-color: #121212;
+    color: #E1F0FD;
+    padding: 1vw;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+h1 {
+    padding: 2.5vw;
+    color: #E1F0FD;
+    background-color: #1F1F1F;
+    text-align: center;
+}
+
+h2, p {
+    text-align: center;
+}
+
+h2 {
+    padding: 1.5vw;
+    background-color: #1F1F1F;
+    color: #E1F0FD;
+}
+
+#intro {
+    font-size: x-large;
+    padding: 5vw;
+    background-color: #1F1F1F;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.concert {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1F1F1F;
+    margin: 2vw auto;
+    padding: 2vw;
+    border-radius: 10px;
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    background-color: #333;
+    z-index: 100;
+    padding: 10px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+nav ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+}
+
+nav li {
+    margin: 0;
+}
+
+nav a {
+    display: flex;
+    color: #E1F0FD;
+    text-decoration: none;
+    padding: 0.7em 1.2em;
+    transition: background 0.3s;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background-color: darkslateblue;
+}
+
+/* Responsive design: Adjust layout on smaller screens */
+@media (max-width: 500px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .concert {
+        width: 90%;
+    }
+}
