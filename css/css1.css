@@ -1,91 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+html {
+    font-size: 120%;
+}
+
 body {
-    background-color: #080b31; /* Darker space-themed background */
-    padding: 1vw;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: #080b31; 
+    font-family: 'Orbitron', 'Montserrat', sans-serif;
 }
 
-/* Main Content Layout */
-div[href^="C"] {
-    background-color: #140d37; /* More subtle, sleek color */
-    padding: 10px;
-    margin: 5px;
-    border: 2px solid #000000;
-    border-radius: 6px;
-    box-shadow: 5px 5px 20px rgba(0, 0, 0, 1); 
+img {
+    width: 98vw;
+    height: auto; 
+    margin-bottom: 2vw;
 }
 
-div[href^="C10"] {
-    margin-right: 0;
-    margin-left: auto; /* This ensures it stays aligned to the left */
-}
-
-/* Flexbox Layout - Default (Computer view) */
-.container {
-    padding: 1px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 3px; /* Smaller gap between columns */
-    justify-content: space-between;
-}
-
-.container > div {
-    flex: 0 1 calc(45% - 6px); /* 2 columns, adjusted for smaller gap */
-}
-
-/* Flexbox Layout - Mobile (Phone view) */
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column; /* Change to column layout on smaller screens */
-        align-items: center;
-    }
-
-    .container > div {
-        flex: 0 1 100%; /* 1 column for phone */
-        margin: none;
-        margin-bottom: 20px;
-    }
-}
-
-/* Styling for h1 and other text */
-h1 {
-    padding: 2.5vw;
-    color: whitesmoke; /* Light text for readability */
-    background-color: #000000; /* Dark blue background for header */
-}
-
-h1:hover {
-    color: rgb(248, 248, 191);
-}
-
-h1, h2, p {
-    text-align: center;
-}
-
-h2 {
-    background-color: #435594; /* Same dark blue for h2 */
-    padding: 10px;
-    border-radius: 6px;
-}
-
-h2:hover {
-    color: rgb(248, 248, 191);
-}
-
-p{
-    padding: 10px;
-}
-
-div {
-    color: whitesmoke;
-}
-
-/* Navigation Styles */
 nav {
     position: sticky;
     top: 0;
-    background-color: #050215; /* Dark background for nav bar */
-    padding: 10px; 
+    left: 0;
+    right: 0;
+    background-color: #050215;
+    padding: 0; 
     z-index: 100;
+    margin-bottom: 2vw;
 }
 
 nav ul {
@@ -106,15 +45,93 @@ nav a {
     color: whitesmoke;
     text-decoration: none;
     padding: .5em 1em;
-    transition: color 0.3s ease; /* Smooth color transition */
+    transition: color 0.5s ease;
 }
 
-/* Hover effect for nav items */
 nav a:hover {
-    background-color: #435594; /* Light cyan color on hover */
+    background-color: #435594; 
+    border-radius: 4px;
 }
 
-/* Responsive design: Make nav bar vertical and centered when width < 500px */
+/* Main Content Layout */
+div[href^="C"] {
+    background-color: #140d37; 
+    padding: 10px;
+    margin: 5px;
+    border: 0px;
+    border-radius: 6px;
+    box-shadow: 0px 0px 10px whitesmoke; 
+}
+
+div[href^="C"]:hover {
+    background-color: #242555;
+}
+
+div[href^="C10"] {
+    margin-right: 0;
+    margin-left: auto; /* This ensures it stays aligned to the left */
+}
+
+.container {
+    padding: 1px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px; 
+    justify-content: space-between;
+}
+
+.container > div {
+    flex: 0 1 calc(45% - 6px);
+    padding: 2vw;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Change to column layout on smaller screens */
+        align-items: center;
+    }
+
+    .container > div {
+        flex: 0 1 100%; /* 1 column for phone */
+        margin: none;
+        margin-bottom: 20px;
+    }
+}
+
+h1 {
+    font-size: 250%;
+    padding: 2.5vw;
+    margin-bottom: 0;
+    color: rgb(250, 250, 150);
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+}
+
+h1, h2, p {
+    text-align: center;
+}
+
+h2 {
+    background-color: #435594;
+    padding: 15px;
+    border-radius: 6px;
+    font-family: 'Kaushan Script', cursive;;
+}
+
+h3 {
+    color: rgb(250, 250, 150);
+    font-family: 'Orbitron', sans-serif;
+}
+
+p {
+    padding: 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+div {
+    color: whitesmoke;
+}
+
 @media (max-width: 768px) {
     nav ul {
         flex-direction: column;
@@ -124,4 +141,15 @@ nav a:hover {
     nav li {
         margin: 0px 0;
     }
+}
+
+footer {
+    margin-top: 5vw;
+    margin-bottom: 3vw;
+    justify-content: center;
+    color: rgb(250, 250, 150);
+    background-color: #050215;
+    text-align: center; /* Centers the text horizontally */
+    padding: 20px; /* Adds space between the text and the background */
+    font-size: 0.8em; /* Makes the font smaller */
 }
