@@ -1,0 +1,22 @@
+img {
+  --o: 20px; /* offset of the border*/
+  --b: 8px;  /* border thickness */
+  
+  mask:
+    conic-gradient(#000 0 0) no-repeat 50%/
+     calc(100% - 2*(var(--o) + var(--b))) 
+     calc(100% - 2*(var(--o) + var(--b))),
+    conic-gradient(from 90deg at var(--o) var(--o),#0000 25%,#000 0)
+     0 0/calc(100% - var(--o)) calc(100% - var(--o));
+  width: 250px;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  grid-auto-flow: column;
+  place-content: center;
+  gap: 50px;
+  background: repeating-linear-gradient(135deg,#D9CEB2 0 20px,#E0E4CC 0 40px);
+}
