@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Box</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: white;
+            color: blue;
+            overflow: hidden;
+        }
+        .box {
+            background-color: pink;
+            border: 20px dotted purple;
+            height: 200px;
+            width: 200px;
+            margin: 20px auto;
+            transition: box-shadow 0.3s ease, background-color 0.3s ease, border 0.3s ease;
+            box-shadow: none;
+        }
+        .box:hover {
+            box-shadow: 0 0 80px hsl(200, 70%, 50%);
+        }
+        .name {
+            background-color: lightcyan;
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+            transition: transform 0.5s ease;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="name">Good Morning!</h1>
+    <div class="box"></div>
+
+    <script>
+        const box = document.querySelector('.box');
+        const name = document.querySelector('.name');
+
+        let isAtBottom = false;
+
+        box.addEventListener('mouseover', changeShadow);
+        box.addEventListener('mouseleave', removeShadow);
+        box.addEventListener('click', changeColor);
+        name.addEventListener('mouseover', moveName);
+
+        function changeShadow() {
+            box.style.boxShadow = `0 0 80px hsl(${Math.random() * 360}, 70%, 50%)`;
+        }
+
+        function removeShadow() {
+            box.style.boxShadow = 'none';
+        }
+
+        function changeColor() {
+            box.style.backgroundColor = `hsl(${Math.random() * 360}, 70%, 70%)`;
+            box.style.border = `20px dotted hsl(${Math.random() * 360}, 70%, 50%)`;
+        }
+
+        function moveName() {
+            if (isAtBottom) {
+                name.style.transform = 'translateY(0)';
+            } else {
+                name.style.transform = 'translateY(420px)';
+            }
+            isAtBottom = !isAtBottom;
+        }
+    </script> 
+</body>
+</html>
