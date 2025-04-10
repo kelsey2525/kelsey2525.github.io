@@ -41,17 +41,24 @@ async function getQuote() {
 
 function displayQuote(quote) {
     const quoteText = document.querySelector('#js-quote-text');
+    quoteText.classList.remove('fade-in'); // Reset animation
+    void quoteText.offsetWidth;            // Trigger reflow
     quoteText.textContent = quote;
+    quoteText.classList.add('fade-in');    // Trigger fade-in
 }
 
 function displayAnswer() {
     const answerText = document.querySelector('#js-answer-text');
+    answerText.classList.remove('fade-in'); // Reset animation
+    void answerText.offsetWidth;            // Trigger reflow
     answerText.textContent = current.answer;
+    answerText.classList.add('fade-in');    // Trigger fade-in
 }
 
 function clearAnswer() {
     const answerText = document.querySelector('#js-answer-text');
     answerText.textContent = "";
+    answerText.classList.remove('fade-in');
 }
 
 newBtn.addEventListener('click', getQuote);
