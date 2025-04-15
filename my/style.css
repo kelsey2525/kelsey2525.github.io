@@ -127,6 +127,16 @@ body {
   }
   
   footer {
-    height: 100px;
+    text-align: center;
+    font-size: 1.5em;
+    background-color: #ffabc4;
+    text-box: #ffe8ef solid 2px;
+    color: white;
+    padding: 2vw;
+    font-family: 'Lora', serif;
+    margin: 0;
+    height: 2vw;
+    width: 96vw;
+    box-shadow: 0 6px 8px rgba(255, 251, 235, 0.05);
   }
   
