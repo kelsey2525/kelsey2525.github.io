@@ -1,0 +1,137 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: radial-gradient(circle, rgba(255, 182, 193, 1) 10%, rgba(245, 245, 245, 1) 80%);
+    background-attachment: fixed; /* Keeps the background fixed while scrolling */
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    height: 100vh; /* Ensure the body takes up the whole viewport height */
+}
+
+h1 {
+    font-family: 'Quicksand', cursive;
+    font-size: 5rem;
+    text-align: center;
+    background: radial-gradient(circle, rgba(255, 99, 149, 1) 30%, rgba(255, 218, 223, 1) 90%);
+    color: #5e0033;
+    padding: 5vw 5vw 5vw 5vw;
+    margin: 0;  /* Makes sure there’s no unexpected spacing */
+    text-shadow: 1px 2px 6px rgba(255, 182, 193, 0.8);
+  }
+
+  h1::after {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    width: 60%;
+    padding-top: 10px;
+    border-bottom: 3px solid #ff99cc;
+  }
+  
+  p {
+    text-align: center;
+    color: purple;
+  }
+  
+  nav {
+  width: 100vw;
+  margin: 2vw 0;
+  display: flex;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  list-style: none;
+  background-color: rgb(255, 233, 237);
+  padding: 1em 2em;
+  margin: 0;
+  width: 100%;
+  gap: 1.5rem;
+}
+
+nav li {
+  margin: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: rgb(100, 50, 100);
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+  
+  nav a:hover {
+    background-color: hotpink;
+  }
+  
+  @media (max-width: 500px) {
+    nav ul {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
+  h2 {
+    text-align: center;
+    font-size: 2.5em;
+    background-color: rgb(255, 233, 237);
+    color: rgb(35, 35, 35);
+    padding: 4vw;
+    font-family: 'Gloock', serif;
+    margin: 0;
+  }
+  
+  h3 {
+    padding-left: 10vw;
+    font-family: 'Playfair Display', serif;
+  }
+
+  h2, h3 {
+    font-family: 'Lora', serif;
+  }
+  
+  .media-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2vw;
+    padding: 2em 10vw;
+  }
+  
+  .media-box {
+    flex: 1 1 calc(33.33% - 2vw);
+    background-color: white;
+    border: 2px solid pink;
+    border-radius: 12px;
+    padding: 1em;
+    margin-bottom: 2em;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .media-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(255, 192, 203, 0.5);
+  }
+  
+  @media (max-width: 1000px) {
+    .media-box {
+      flex: 1 1 calc(50% - 2vw);
+    }
+  }
+  
+  @media (max-width: 700px) {
+    .media-box {
+      flex: 1 1 100%;
+    }
+  }
+  
+  footer {
+    height: 100px;
+  }
