@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8"/>
+    <title>JSON: Task 1</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: helvetica, sans-serif;
+        width: 500px;
+        margin: 0 auto;
+        text-align: center;
+        font-size: 150%;
+        padding: 20px;
+        background: lightpink;
+        color: magenta;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      p {
+        color: purple;
+        margin: 1em 0;
+        background: lightgoldenrodyellow;
+        padding: 10px;
+        border-radius: 10px;
+        visibility: visible;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="preview"></section>
+
+    <script>
+      const section = document.querySelector('section');
+
+      let para1 = document.createElement('p');
+      let para2 = document.createElement('p');
+      let motherInfo = 'The mother cats are called ';
+      let kittenInfo;
+      const requestURL = 'https://mdn.github.io/learning-area/javascript/oojs/tasks/json/sample.json';
+
+      fetch(requestURL)
+        .then(response => response.text())
+        .then(text => displayCatInfo(text));
+
+      function displayCatInfo(catString) {
+        let total = 0;
+        let male = 0;
+        let female = 0;
+
+        const cats = JSON.parse(catString);
+        const motherNames = [];
+
+        cats.forEach(cat => {
+          motherNames.push(cat.name);
+          cat.kittens.forEach(kitten => {
+            total++;
+            if (kitten.gender === 'm') male++;
+            else if (kitten.gender === 'f') female++;
+          });
+        });
+
+        if (motherNames.length > 1) {
+          const last = motherNames.pop();
+          motherInfo += motherNames.join(', ') + ' and ' + last + '.';
+        } else {
+          motherInfo += motherNames[0] + '.';
+        }
+
+        kittenInfo = `There are ${total} kittens. ${male} are male and ${female} are female.`;
+
+        para1.textContent = motherInfo;
+        para2.textContent = kittenInfo;
+
+        section.appendChild(para1);
+        section.appendChild(para2);
+      }
+    </script>
+  </body>
+</html>
