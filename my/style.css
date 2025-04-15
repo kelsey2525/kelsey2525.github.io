@@ -8,17 +8,67 @@ body {
     position: relative;
     min-height: 100vh;
   }
-  
-  h1 {
-    font-family: 'Great Vibes', cursive;
-    font-size: 6rem;
+
+  header {
     text-align: center;
-    background: radial-gradient(circle, #ff83a8 30%, #ffa3c1 90%);
-    color: rgb(255, 253, 247);
     padding: 6vw;
-    margin: 0;
+    background: radial-gradient(circle, #ff7ca3 30%, #ffc0d5 90%);
+    color: #fff7f9;
     text-shadow: 1px 1px 2px rgb(188, 154, 154, .5);
   }
+  
+  header h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 6rem;
+    margin: 0;
+    position: relative;
+    display: inline-block;
+    padding: 1rem 2rem;
+  }
+  
+  header p {
+    color: #ffe8ef;
+    margin-top: 0.5em;
+    margin-bottom: -.8em;
+    font-size: 1.5rem;
+    padding: -5vw;
+  }
+
+  .corner {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 3px solid white;
+  }
+  
+  .top-left {
+    top: 0;
+    left: 0;
+    border-right: none;
+    border-bottom: none;
+  }
+  
+  .top-right {
+    top: 0;
+    right: 0;
+    border-left: none;
+    border-bottom: none;
+  }
+  
+  .bottom-left {
+    bottom: 0;
+    left: 0;
+    border-right: none;
+    border-top: none;
+  }
+  
+  .bottom-right {
+    bottom: 0;
+    right: 0;
+    border-left: none;
+    border-top: none;
+  }
+  
   
   p {
     text-align: center;
@@ -83,6 +133,11 @@ body {
     padding: 4vw;
     font-family: 'Lora', serif;
     margin: 0;
+    scroll-margin-top: 4.5vw; /* Adjust based on nav height */
+  }
+
+  [id] {
+    scroll-margin-top: 4.5vw;
   }
   
   h3 {
@@ -126,17 +181,31 @@ body {
     }
   }
   
+  .film-cover {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 0.5em;
+  }
+  
+  .film-title {
+    font-weight: bold;
+    font-family: 'Lora', serif;
+    color: #333;
+  }
+
   footer {
     text-align: center;
     font-size: 1.5em;
-    background-color: #ffabc4;
-    text-box: #ffe8ef solid 2px;
+    background-color: #ffabc4; /* pink */
     color: white;
     padding: 2vw;
     font-family: 'Lora', serif;
     margin: 0;
-    height: 2vw;
-    width: 96vw;
     box-shadow: 0 6px 8px rgba(255, 251, 235, 0.05);
+  }
+  
+  footer:hover {
+    background-color: #ffe4ec;
+    color: #333; 
   }
   

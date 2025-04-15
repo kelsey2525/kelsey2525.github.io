@@ -21,9 +21,18 @@
     </ul>
   </nav>
 
-  <h1 id="Top">Kelsey Silverman</h1>
+  <header id="Top">
+    <h1>
+      <span class="corner top-left"></span>
+      <span class="corner top-right"></span>
+      Kelsey Silverman
+      <span class="corner bottom-left"></span>
+      <span class="corner bottom-right"></span>
+    </h1>
+    <p><strong>Filmmaker, Designer, Creative</strong></p>
+  </header>
+
   <p>  📷   </p>
-  <p><strong>Filmmaker, Designer, Creative</strong></p>
   <p><i>I, Kelsey Silverman, coded this website from scratch using HTML, CSS, and JavaScript.</i></p>
   <p><i>Thank you to VS Code, and GitHub for providing the software necessary to create this virtual portfolio.</i></p>
   <p>  📷   </p>
@@ -32,7 +41,12 @@
     <h2 data-aos="fade-up">Films</h2>
     <div class="media-container" data-aos="fade-up">
       <div class="media-box">film 1: demo reel</div>
-      <div class="media-box">film 2</div>
+      <div class="media-box">
+  <a href="film2.html">
+    <img src="film2-cover.jpg" alt="Film 2 Cover" class="film-cover">
+    <div class="film-title">Film 2: Documentary</div>
+  </a>
+</div>
       <div class="media-box">film 3</div>
       <div class="media-box">film 4</div>
       <div class="media-box">film 5</div>
@@ -100,7 +114,7 @@
     <h2 data-aos="fade-up">Contact Me</h2>
   </div>
 
-  <footer id="Top">Back to Top</footer>
+  <footer><a href="#Top">Back to Top</a></footer>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
