@@ -6,6 +6,7 @@
   <title>Kelsey Silverman Portfolio</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Lora&family=Quicksand&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@300..900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Great+Vibes&family=Lora&family=Quicksand&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
@@ -31,10 +32,10 @@
     </h1>
     <p><strong>Filmmaker, Designer, Creative</strong></p>
   </header>
-
   <p>  📷   </p>
-  <p><i>I, Kelsey Silverman, coded this website from scratch using HTML, CSS, and JavaScript.</i></p>
-  <p><i>Thank you to VS Code, and GitHub for providing the software necessary to create this virtual portfolio.</i></p>
+  <!-- <img class="lens" src="./img/lens.png" alt="Camera Lens"> -->
+  <p>I, Kelsey Silverman, coded this website from scratch using HTML, CSS, and JavaScript.</p>
+  <p>Thank you to VS Code, and GitHub for providing the software necessary to create this virtual portfolio.</p>
   <p>  📷   </p>
 
   <div id="Films">
@@ -42,9 +43,9 @@
     <div class="media-container" data-aos="fade-up">
       <div class="media-box">film 1: demo reel</div>
       <div class="media-box">
-  <a href="film2.html">
-    <img src="film2-cover.jpg" alt="Film 2 Cover" class="film-cover">
-    <div class="film-title">Film 2: Documentary</div>
+            <a href="film2.html">
+            <img src="./img/film2.jpeg" alt="Film 2 Cover" class="film-cover">
+    <div class="film-title">Documentary: <i>Reel Brothers</i></div>
   </a>
 </div>
       <div class="media-box">film 3</div>
@@ -105,10 +106,32 @@
 
   <div id="Social">
     <h2 data-aos="fade-up">Social Media</h2>
-    <h3 data-aos="fade-up">LinkedIn</h3>
-    <h3 data-aos="fade-up">YouTube</h3>
-    <h3 data-aos="fade-up">Instagram</h3>
+  
+    <div class="social-container" data-aos="fade-up">
+      <div class="social-link">
+        <a href="https://www.linkedin.com/in/kelsey-silverman-60568429b/" target="_blank" rel="noopener noreferrer">
+          <h3>LinkedIn</h3>
+          <img src="./social/linkedin.png" alt="LinkedIn Logo">
+        </a>
+      </div>
+  
+      <div class="social-link">
+        <a href="https://www.instagram.com/kels.is.creative/" target="_blank" rel="noopener noreferrer">
+          <h3>Instagram</h3>
+          <img src="./social/insta.png" alt="Instagram Logo">
+        </a>
+      </div>
+  
+      <div class="social-link">
+        <a href="https://www.youtube.com/@kelseysilvermanfilm" target="_blank" rel="noopener noreferrer">
+          <h3>YouTube</h3>
+          <img src="./social/youtube.png" alt="YouTube Logo">
+        </a>
+      </div>
+    </div>
   </div>
+  
+  
 
   <div id="Contact">
     <h2 data-aos="fade-up">Contact Me</h2>
