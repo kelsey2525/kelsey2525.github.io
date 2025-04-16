@@ -1,6 +1,6 @@
 body {
     font-family: 'Montserrat', sans-serif;
-    background: radial-gradient(circle, #ffbfd1 10%, #ffe8ef 80%);
+    background: radial-gradient(circle, #ffe5d9 10%, #f8bec6 80%);
     background-attachment: fixed;
     background-size: cover;
     margin: 0;
@@ -18,9 +18,9 @@ body {
   header {
     text-align: center;
     padding: 6vw;
-    background: radial-gradient(circle, #ff7ca3 30%, #ffabc4 90%);
+    background: radial-gradient(circle, #e58297 30%, #f8bec6 90%);
     color: #fff7f9;
-    text-shadow: 1px 2px 4px rgb(188, 154, 154, .3);
+    text-shadow: 1px 2px 4px #e5718a;
   }
   
   header h1 {
@@ -33,7 +33,7 @@ body {
   }
   
   header p {
-    color: #ffe8ef;
+    color: #f9d2d7;
     margin-top: 0.5em;
     margin-bottom: -.8em;
     font-size: 1.5rem;
@@ -90,7 +90,7 @@ body {
     display: flex;
     justify-content: center;
     font-size: 1.2rem;
-    background-color: #ffabc4;
+    background-color: #ffe5d9;
     box-shadow: 0 6px 8px rgba(255, 251, 235, 0.05);
   }
   
@@ -120,7 +120,7 @@ body {
   }
   
   nav a:hover {
-    background-color: #ff7ca3;
+    background-color: #e58297;
     color: white;
     padding: 0.7em 1.3em;
   }
@@ -135,7 +135,7 @@ body {
   h2 {
     text-align: center;
     font-size: 2.5em;
-    background-color: #ffe8ef;
+    background-color: #f8bec6;
     color: #232323;
     padding: 4vw;
     font-family: 'Lora', serif;
@@ -172,7 +172,7 @@ body {
   .media-box {
     flex: 1 1 calc(33.33% - 2vw);
     background-color: white;
-    border: 2px solid #ffabc4;
+    border: 2px solid #ffe5d9;
     border-radius: 12px;
     padding: 1em;
     margin-bottom: 2em;
@@ -229,7 +229,7 @@ body {
   
   .social-link {
     background-color: white;
-    border: 2px solid #ffabc4;
+    border: 2px solid #e58297;
     border-radius: 25px;
     width: 12vw;
     padding: 1.5vw;
@@ -239,7 +239,7 @@ body {
   
   .social-link:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 16px #ffabc4;
+    box-shadow: 0 8px 16px #e58297;
   }
   
   .social-link a {
@@ -273,7 +273,7 @@ body {
   }
   
   footer:hover {
-    background-color: #ff7ca3;
+    background-color: #e58297;
     color: white; 
 
   }
