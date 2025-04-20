@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sticker Filter</title>
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #111;
+    }
+
+    .container {
+      position: relative;
+    }
+
+    .text {
+      filter: url(#sticker);
+      color: #999;
+      font-size: 4rem;
+      font-weight: bold;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      outline: none;
+    }
+
+    .text:focus {
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="text" contenteditable="true" spellcheck="false">
+    ✰ Edit this SUPER AWESOME text ✰
+  </div>
+</div>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0">
+  <defs>
+    <filter id="sticker">
+      <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="1" seed="14" stitchTiles="noStitch" result="turb"/>
+      <feColorMatrix in="turb" type="saturate" values="30" result="color"/>
+      <feMorphology in="SourceGraphic" operator="dilate" radius="10" result="morph"/>
+      <feFlood flood-color="#000" flood-opacity="1" result="flood"/>
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
+      <feOffset in="color" dx="0" dy="0" result="offset"/>
+      <feComposite in="flood" in2="morph" operator="in" result="comp1"/>
+      <feDiffuseLighting in="blur" surfaceScale="10" diffuseConstant="1" lighting-color="#fff" result="light">
+        <fePointLight id="light" x="100" y="50" z="20"/>
+      </feDiffuseLighting>
+      <feComposite in="offset" in2="SourceGraphic" operator="atop" result="comp2"/>
+      <feComposite in="comp2" in2="comp1" operator="atop" result="comp3"/>
+      <feTurbulence type="fractalNoise" baseFrequency="3" numOctaves="1" seed="0" result="turb2"/>
+      <feComposite in="light" in2="comp3" operator="in" result="comp4"/>
+      <feBlend in="comp4" in2="comp3" mode="color-dodge" result="blend"/>
+      <feColorMatrix in="turb2" type="matrix" values="1 0 0 0 0 
+                                                      1 0 0 0 0 
+                                                      1 0 0 0 0 
+                                                      0.03 0 0 0 0" result="matrix"/>
+      <feComposite in="matrix" in2="blend" operator="atop"/>
+    </filter>
+  </defs>
+</svg>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const text = document.querySelector('.text');
+    const light = document.querySelector('#light');
+
+    document.addEventListener('mousemove', (e) => {
+      const rect = text.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      light.setAttribute('x', x);
+      light.setAttribute('y', y);
+    });
+
+    text.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
