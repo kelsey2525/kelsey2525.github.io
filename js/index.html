@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Reverse Phone Input</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 4rem;
+    }
+
+    h2 {
+      margin-bottom: 1rem;
+    }
+
+    input[type="text"] {
+      font-size: 2rem;
+      padding: 0.5rem 1rem;
+      width: 220px;
+      text-align: right;
+      border: 2px solid #e6c1c1;
+      border-radius: 8px;
+      background-color: rgb(255, 228, 228);
+    }
+
+    button {
+      margin-top: 1rem;
+      padding: 0.5rem 1.2rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 6px;
+      background-color: #f700ff;
+      color: white;
+      cursor: pointer;
+      display: none;
+    }
+
+    button:hover {
+      background-color: #b3006b;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Enter Phone Number</h2>
+  <input type="text" id="phoneInput" maxlength="10" autofocus />
+  <button id="submitBtn">Enter</button>
+
+  <script>
+    const input = document.getElementById('phoneInput');
+    const button = document.getElementById('submitBtn');
+
+    let digits = [];        // Most recent to oldest
+    let deleteTimer = null;
+    let deleteIndex = 0;
+
+    input.addEventListener('input', () => {
+      const newChar = input.value.replace(/\D/g, '').slice(-1);
+      input.value = '';
+
+      if (!newChar) return;
+
+      if (digits.length < 10) {
+        digits.unshift(newChar); // Add to front
+        updateDisplay();
+        resetDeleteTimer();
+      }
+
+      if (digits.length === 10) {
+        button.style.display = 'inline-block';
+        clearTimeout(deleteTimer);
+      }
+    });
+
+    function resetDeleteTimer() {
+      clearTimeout(deleteTimer);
+      deleteIndex = 0;
+      deleteTimer = setTimeout(deleteNextDigit, 1000);
+    }
+
+    function deleteNextDigit() {
+      if (digits.length > 0 && digits.length < 10) {
+        digits.shift();
+        updateDisplay();
+        deleteTimer = setTimeout(deleteNextDigit, 1000);
+      }
+    }
+
+    function updateDisplay() {
+      input.value = digits.join('');
+      button.style.display = digits.length === 10 ? 'inline-block' : 'none';
+    }
+
+    button.addEventListener('click', () => {
+      const submittedNumber = digits.join(''); // No reverse now
+      console.log("Phone number submitted:", submittedNumber);
+      alert("Phone number submitted: " + submittedNumber);
+      digits = [];
+      updateDisplay();
+    });
+
+    window.onload = () => input.focus();
+  </script>
+
+</body>
+</html>
