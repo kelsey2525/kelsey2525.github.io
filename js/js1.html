@@ -146,11 +146,11 @@
 
     input.value = rawInput.split("").reverse().join("");
 
-    // Update spin speed
-    let baseSpeed = 4; // seconds per rotation
+    
+    let baseSpeed = 4;
     let speed = baseSpeed - rawInput.length * 0.5;
     speed = Math.max(0.5, speed);
-    targetSpeed = 0.1 + (10 - speed) * 1.2; // remap shorter durations to faster degrees/frame
+    targetSpeed = 0.1 + (10 - speed) * 1.2;
 
 
     if (rawInput.length === 10) {
@@ -184,7 +184,8 @@
 
   }
 
-  // Bouncing animation
+  
+
   let x = window.innerWidth / 2;
   let y = window.innerHeight / 2;
   let dx = 4 + Math.random() * 2;
@@ -209,11 +210,10 @@
   animate();
 
   let rotation = 0;
-let targetSpeed = 0.1; // medium base spin
+let targetSpeed = 0.1; 
 let currentSpeed = 0.1;
 
 function spinBubble() {
-  // Medium interpolation for smoother but quicker acceleration
   currentSpeed += (targetSpeed - currentSpeed) * 0.07;
   rotation = (rotation + currentSpeed) % 360;
   bubble.style.transform = `rotate(${rotation}deg)`;
