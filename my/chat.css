@@ -1,3 +1,4 @@
+/* === GLOBAL STYLES === */
 body {
     font-family: 'Lora', sans-serif;
     background: radial-gradient(circle, #faece8 10%, #ffb1c2 80%);
@@ -11,7 +12,40 @@ body {
     overflow-x: hidden;
     overflow-y: scroll;
   }
-
+  
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: -10;
+    background:
+      linear-gradient(to right,
+        transparent 33.66%,
+        rgba(255, 255, 255, 0.2) 30.33%,
+        rgba(255, 255, 255, 0.2) 34%,
+        transparent 34%,
+        transparent 66.99%,
+        rgba(255, 255, 255, 0.2) 66.66%,
+        rgba(255, 255, 255, 0.2) 67.33%,
+        transparent 67.33%
+      ),
+      linear-gradient(to bottom,
+        transparent 33.33%,
+        rgba(255, 255, 255, 0.2) 33.33%,
+        rgba(255, 255, 255, 0.2) 34%,
+        transparent 34%,
+        transparent 66.66%,
+        rgba(255, 255, 255, 0.2) 66.66%,
+        rgba(255, 255, 255, 0.2) 67.33%,
+        transparent 67.33%
+      );
+  }
+  
+  /* === HEADER === */
   header {
     text-align: center;
     padding: 6vw;
@@ -19,23 +53,21 @@ body {
   
   header h1 {
     font-family: 'Emilys Candy', cursive;
-    font-size: 4em;
+    font-size: 6vw;
     margin: 0;
-    position: relative;
     display: inline-block;
     padding: 2vw 3vw;
-    color: #dd5e79; /* Deep rose, matches your nav links */
-    
+    color: #dd5e79;
   }
   
   header p {
     color: #e16983;
     margin-top: 3vw;
     margin-bottom: -3vw;
-    font-size: 1.5vh;
-    
+    font-size: 1.5vw;
   }
-
+  
+  /* === CORNERS === */
   .corner {
     position: absolute;
     width: 2vw;
@@ -43,58 +75,50 @@ body {
     border: .4vw solid #faece8;
   }
   
-  .top-left {
-    top: 0;
-    left: 0;
-    border-right: none;
-    border-bottom: none;
-  }
+  .top-left { top: 0; left: 0; border-right: none; border-bottom: none; }
+  .top-right { top: 0; right: 0; border-left: none; border-bottom: none; }
+  .bottom-left { bottom: 0; left: 0; border-right: none; border-top: none; }
+  .bottom-right { bottom: 0; right: 0; border-left: none; border-top: none; }
   
-  .top-right {
-    top: 0;
-    right: 0;
-    border-left: none;
-    border-bottom: none;
-  }
-  
-  .bottom-left {
-    bottom: 0;
-    left: 0;
-    border-right: none;
-    border-top: none;
-  }
-  
-  .bottom-right {
-    bottom: 0;
-    right: 0;
-    border-left: none;
-    border-top: none;
-  }
-  
-  
+  /* === TEXT === */
   p {
     font-family: 'Lora', cursive;
     text-align: center;
     color: #333;
     margin-top: 3vw;
     margin-bottom: 6vw;
-    line-height: 1.4vw;
-    word-wrap: break-word;
-    font-size: 1vw; /* Adjust font size for smaller screens */
-    padding: 0 1vw; /* Add padding to prevent text from touching the edges */
-  }
-  
-  /* Adjust the font size for larger screens */
-  @media (min-width: 768px) {
-    p {
-      font-size: 1vw;
-    }
+    line-height: 1.6em;
+    font-size: 1.2vw;
+    padding: 0 1vw;
   }
   
   p + p {
-    margin-top: -5.2vw; /* pull second p closer to first */
+    margin-top: 2vw;
   }
   
+  /* === HEADINGS === */
+  h2 {
+    text-align: center;
+    font-size: 2.5vw;
+    background-color: #ffb1c2;
+    color: #901b34;
+    padding: 3vw;
+    font-family: 'Lora', serif;
+    margin: 2vw;
+  }
+  
+  [id] {
+    scroll-margin-top: 6vw;
+  }
+  
+  h3 {
+    font-family: 'Lora', serif;
+    margin: 0;
+    padding: 1.5vw;
+    text-align: center;
+  }
+  
+  /* === NAVIGATION === */
   nav {
     width: 100vw;
     position: sticky;
@@ -119,9 +143,7 @@ body {
     gap: 2rem;
   }
   
-  nav li {
-    margin: 0;
-  }
+  nav li { margin: 0; }
   
   nav a {
     text-decoration: none;
@@ -138,38 +160,7 @@ body {
     padding: 0.7vw 1.3vw;
   }
   
-  
-  
-  h2 {
-    text-align: center;
-    font-size: 2.5vh;
-    background-color: #ffb1c2;
-    color: #901b34;
-    padding: 3vw;
-    font-family: 'Lora', serif;
-    margin: 2vw;
-    scroll-margin-top: 4.5vw; /* Adjust based on nav height */
-  }
-
-  [id] {
-    scroll-margin-top: 4.5vw;
-  }
-  
-  h3 {
-    font-family: 'Lora', serif;
-    margin: 0;
-    padding: 1.5vw;
-    font-size: 1.8vh;
-    text-align: center;
-  }
-  
-  .social-link h3 {
-    font-size: 1.8vw;
-    margin-bottom: 1vw;
-    margin-top: 0;
-    text-align: center;
-  }
-  
+  /* === FILM GRID === */
   .media-container {
     display: flex;
     flex-wrap: wrap;
@@ -194,18 +185,6 @@ body {
     box-shadow: 0 .8vw 1.6vw #ffb1c2;
   }
   
-  @media (max-width: 1024px) {
-    .media-box {
-      flex: 1 1 calc(50% - 2vw);
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .media-box {
-      flex: 1 1 100%;
-    }
-  }
-  
   .film-cover {
     width: 100%;
     border-radius: .8vw;
@@ -217,15 +196,11 @@ body {
     font-family: 'Lora', serif;
     color: #333;
   }
-
+  
+  /* === SOCIAL SECTION === */
   #Social {
     text-align: center;
     padding: 1vw;
-  }
-  
-  #Social h2 {
-    font-size: 2.5vw;
-    margin-bottom: 0vw;
   }
   
   .social-container {
@@ -239,7 +214,7 @@ body {
   .social-link {
     background-color: white;
     border: .2vw solid #faece8;
-    border-radius: 1vw;
+    border-radius: .25vw;
     width: 12vw;
     padding: 1.5vw;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -259,21 +234,22 @@ body {
     color: inherit;
   }
   
+  .social-link img {
+    width: 4vw;
+  }
+  
   .social-link h3 {
     font-size: 1.6vw;
     margin: 0;
     text-align: center;
   }
   
-  .social-link img {
-    width: 4vw;
-  }
-  
+  /* === FOOTER === */
   footer {
     text-align: center;
     font-size: 1.5vw;
-    background-color: #faece8; /* Same as nav */
-    color: #a42440; /* Same as nav link text */
+    background-color: #faece8;
+    color: #a42440;
     padding: 2vw;
     font-family: 'Lora', sans-serif;
     font-weight: bold;
@@ -282,10 +258,8 @@ body {
     transition: all 0.3s ease;
   }
   
-
-
   footer a {
-    color: #a42440; /* Same as nav link color */
+    color: #a42440;
     text-decoration: none;
     font-weight: bold;
     transition: all 0.3s ease;
@@ -298,45 +272,66 @@ body {
     border-radius: .8vw;
   }
   
-  /* Prevent visited links from turning purple */
   footer a:visited {
     color: #a42440;
   }
   
-  body::before {
-
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    pointer-events: none; /* So it doesn’t interfere with clicks */
-    z-index: -10; /* Behind everything */
-    background: 
-      linear-gradient(to right, 
-        transparent 33.66%, 
-        rgba(255, 255, 255, 0.2) 30.33%, 
-        rgba(255, 255, 255, 0.2) 33.33%, 
-        transparent 34%,
-        transparent 66.99%, 
-        rgba(255, 255, 255, 0.2) 66.66%, 
-        rgba(255, 255, 255, 0.2) 67.33%, 
-        transparent 67.33%
-      ),
-      linear-gradient(to bottom, 
-        transparent 33.33%, 
-        rgba(255, 255, 255, 0.2) 33.33%, 
-        rgba(255, 255, 255, 0.2) 34%, 
-        transparent 34%,
-        transparent 66.66%, 
-        rgba(255, 255, 255, 0.2) 66.66%, 
-        rgba(255, 255, 255, 0.2) 67.33%, 
-        transparent 67.33%
-      );
+  /* === RESPONSIVE MEDIA QUERIES === */
+  @media (max-width: 900px) {
+    .media-box {
+      flex: 1 1 45%;
+    }
+  
+    nav ul {
+      flex-direction: column;
+      align-items: center;
+      gap: 4vw;
+      padding: 4vw 0;
+    }
+  
+    nav a {
+      font-size: 5vw;
+    }
+  
+    .social-link {
+      width: 30vw;
+    }
   }
   
+  @media (max-width: 600px) {
+    header h1 {
+      font-size: 10vw;
+    }
   
+    header p {
+      font-size: 4vw;
+      margin-top: 5vw;
+      margin-bottom: 2vw;
+    }
   
-
+    p {
+      font-size: 4vw;
+      line-height: 1.6em;
+    }
+  
+    h2 {
+      font-size: 6vw;
+    }
+  
+    .media-box {
+      flex: 1 1 100%;
+    }
+  
+    .social-link h3 {
+      font-size: 4vw;
+    }
+  
+    .social-link img {
+      width: 8vw;
+    }
+  
+    footer {
+      font-size: 4vw;
+    }
+  }
   
