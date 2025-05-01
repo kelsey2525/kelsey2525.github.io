@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bouncing Phone Bubble</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(#111, #000);
+      height: 100%;
+      overflow: hidden;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .title {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 48px;
+      color: #0ff;
+      opacity: 0.5;
+      pointer-events: none;
+      user-select: none;
+      z-index: 0;
+    }
+
+    .orbit-container {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+    }
+
+    .bubble {
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle at 30% 30%, #00f0ff, #004e7c);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 30px #00f0ff;
+      transition: transform 0.1s linear; /* Smooth rotation */
+    }
+
+    input {
+      width: 120px;
+      padding: 10px;
+      font-size: 18px;
+      border: none;
+      text-align: right;
+      background: rgba(255,255,255,0.8);
+      border-radius: 10px;
+      outline: none;
+      direction: rtl; /* Right-to-left text direction */
+    }
+
+    .popup {
+      position: fixed;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #111;
+      color: #0ff;
+      border: 2px solid #0ff;
+      border-radius: 20px;
+      padding: 30px;
+      font-size: 18px;
+      box-shadow: 0 0 20px #0ff;
+      z-index: 999;
+      display: none;
+      text-align: center;
+      animation: popIn 0.5s ease-out forwards;
+    }
+
+    .popup button {
+      margin-top: 15px;
+      background: #0ff;
+      border: none;
+      color: #111;
+      font-weight: bold;
+      padding: 10px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    @keyframes popIn {
+      from { opacity: 0; transform: scale(0.8) translate(-50%, -50%); }
+      to { opacity: 1; transform: scale(1) translate(-50%, -50%); }
+    }
+  </style>
+</head>
+<body>
+
+<div class="title">Enter Phone Number</div>
+
+<div class="orbit-container" id="orbit">
+  <div class="bubble" id="bubble">
+    <input type="text" id="phoneInput" maxlength="10" inputmode="numeric" />
+  </div>
+</div>
+
+<div class="popup" id="popup1">
+    <div id="popupMessage">Ready to submit phone number (<span id="reversedNumber"></span>)?</div>
+    <button onclick="showSecondPopup()">Submit</button>
+</div>
+
+<div class="popup" id="popup2">
+  <div>Phone number submitted</div>
+  <button onclick="resetEverything()">✖ Close</button>
+</div>
+
+<script>
+  const input = document.getElementById('phoneInput');
+  const popup1 = document.getElementById('popup1');
+  const popup2 = document.getElementById('popup2');
+  const orbit = document.getElementById('orbit');
+  const bubble = document.getElementById('bubble');
+
+  let phoneNumber = "";
+  let isFrozen = false;
+
+  input.addEventListener('input', (e) => {
+    if (isFrozen) return;
+
+    // Get the value exactly as typed (strip out anything non-numeric)
+    let raw = e.target.value.replace(/\D/g, ''); // Remove any non-numeric characters
+    raw = raw.slice(0, 10); // Limit to 10 digits max
+    phoneNumber = raw;
+
+    // Reverse the phone number after each new digit is typed
+    let reversed = raw.split('').reverse().join('');
+    input.value = reversed;
+
+    // Smooth rotation of the bubble
+    let baseSpeed = 5;
+    let minSpeed = 0.5;
+    let newSpeed = Math.max(minSpeed, baseSpeed - raw.length * 0.4);
+    bubble.style.transition = `transform ${newSpeed}s linear`; // Smooth transition for rotation
+    bubble.style.transform = `rotate(${newSpeed * 360}deg)`; // Apply smooth rotation
+
+    if (raw.length === 10) {
+      isFrozen = true;
+      // Display the phone number in reversed form in the popup
+      document.getElementById('reversedNumber').textContent = raw.split('').reverse().join('');
+      popup1.style.display = 'block';
+    }
+  });
+
+  function showSecondPopup() {
+    popup1.style.display = 'none';
+    popup2.style.display = 'block';
+    // Log the correctly reversed phone number for submission
+    console.log("Submitted phone number (reversed input):", phoneNumber.split('').reverse().join(''));
+  }
+
+  function resetEverything() {
+    popup2.style.display = 'none';
+    phoneNumber = "";
+    input.value = "";
+    bubble.style.transition = "transform 5s linear"; // Reset rotation speed
+    bubble.style.transform = "rotate(0deg)"; // Reset rotation angle
+    isFrozen = false;
+    x = window.innerWidth / 2;
+    y = window.innerHeight / 2;
+    dx = 2 + Math.random() * 2;
+    dy = 2 + Math.random() * 2;
+    animate(); // Restart animation
+  }
+
+  // Bouncing logic
+  let x = window.innerWidth / 2;
+  let y = window.innerHeight / 2;
+  let dx = 2 + Math.random() * 2;
+  let dy = 2 + Math.random() * 2;
+  const radius = 100; // Half of bubble size
+
+  function animate() {
+    if (!isFrozen) {
+      x += dx;
+      y += dy;
+
+      if (x + radius > window.innerWidth || x - radius < 0) dx = -dx;
+      if (y + radius > window.innerHeight || y - radius < 0) dy = -dy;
+
+      orbit.style.left = `${x}px`;
+      orbit.style.top = `${y}px`;
+    }
+
+    requestAnimationFrame(animate);
+  }
+
+  animate(); // Start animation
+</script>
+
+</body>
+</html>
