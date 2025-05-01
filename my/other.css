@@ -313,13 +313,13 @@ font-family: 'Lora', sans-serif;
     z-index: -10; /* Behind everything */
     background: 
       linear-gradient(to right, 
-        transparent 33.66%, 
-        rgba(255, 255, 255, 0.2) 30.33%, 
+        transparent 30.2%, 
+        rgba(255, 255, 255, 0.2) 30%, 
         rgba(255, 255, 255, 0.2) 34%, 
         transparent 34%,
-        transparent 66.99%, 
-        rgba(255, 255, 255, 0.2) 66.66%, 
-        rgba(255, 255, 255, 0.2) 67.33%, 
+        transparent 70%, 
+        rgba(255, 255, 255, 0.2) 70%, 
+        rgba(255, 255, 255, 0.2) 71%, 
         transparent 67.33%
       ),
       linear-gradient(to bottom, 
