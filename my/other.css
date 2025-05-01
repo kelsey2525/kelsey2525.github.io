@@ -1,5 +1,5 @@
-body {
-    font-family: 'Lora', sans-serif;
+body{
+font-family: 'Lora', sans-serif;
     background: radial-gradient(circle, #faece8 10%, #ffb1c2 80%);
     background-attachment: fixed;
     background-size: cover;
@@ -19,7 +19,7 @@ body {
   
   header h1 {
     font-family: 'Emilys Candy', cursive;
-    font-size: 4em;
+    font-size: 6vw;
     margin: 0;
     position: relative;
     display: inline-block;
@@ -32,7 +32,7 @@ body {
     color: #e16983;
     margin-top: 3vw;
     margin-bottom: -3vw;
-    font-size: 1.5vh;
+    font-size: 1.5vw;
     
   }
 
@@ -139,10 +139,9 @@ body {
   }
   
   
-  
   h2 {
     text-align: center;
-    font-size: 2.5vh;
+    font-size: 2.5vw;
     background-color: #ffb1c2;
     color: #901b34;
     padding: 3vw;
@@ -159,7 +158,6 @@ body {
     font-family: 'Lora', serif;
     margin: 0;
     padding: 1.5vw;
-    font-size: 1.8vh;
     text-align: center;
   }
   
@@ -194,13 +192,13 @@ body {
     box-shadow: 0 .8vw 1.6vw #ffb1c2;
   }
   
-  @media (max-width: 1024px) {
+  @media (max-width: 900px) {
     .media-box {
-      flex: 1 1 calc(50% - 2vw);
+      flex: 1 1 45%;
     }
   }
   
-  @media (max-width: 768px) {
+  @media (max-width: 600px) {
     .media-box {
       flex: 1 1 100%;
     }
@@ -317,7 +315,7 @@ body {
       linear-gradient(to right, 
         transparent 33.66%, 
         rgba(255, 255, 255, 0.2) 30.33%, 
-        rgba(255, 255, 255, 0.2) 33.33%, 
+        rgba(255, 255, 255, 0.2) 34%, 
         transparent 34%,
         transparent 66.99%, 
         rgba(255, 255, 255, 0.2) 66.66%, 
@@ -335,8 +333,5 @@ body {
         transparent 67.33%
       );
   }
-  
-  
-  
 
   
