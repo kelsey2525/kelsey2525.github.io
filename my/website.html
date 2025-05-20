@@ -32,13 +32,22 @@
     <p><strong>Filmmaker, Designer, Creative</strong></p>
   </header>
   <!-- <img class="lens" src="./img/lens.png" alt="Camera Lens"> -->
-  <p>I, Kelsey Silverman, created this website from scratch using HTML, CSS, and JavaScript.</p>
-  <p>Thank you to VS Code, and GitHub for providing the software necessary to create this virtual portfolio.</p>
-<p>Welcome!</p>
+  <p class="custom-paragraph">
+  I, Kelsey Silverman, created this website from scratch using HTML, CSS, and JavaScript.<br>
+  Thank you to VS Code, GitHub, and my Professors at CU Boulder for providing me with the tools necessary to create this virtual portfolio.<br>
+  Welcome!
+</p>
+
+
   <div id="Films">
     <h2 data-aos="fade-up">Films</h2>
     <div class="media-container" data-aos="fade-up">
-      <div class="media-box">Demo Reel Coming Soon...</div>
+      <div class="media-box">
+            <a href="film1.html">
+            <img src="./img/film2.jpeg" alt="Film 2 Cover" class="film-cover">
+            <div class="film-title">Documentary: <i>Reel Brothers</i></div>
+            </a>
+      </div>
       <div class="media-box">
             <a href="film2.html">
             <img src="./img/film2.jpeg" alt="Film 2 Cover" class="film-cover">
@@ -46,10 +55,29 @@
             </a>
       </div>
       <div class="media-box">
-            <a href="film3.html"></a>film 3</div>
-      <div class="media-box">film 4</div>
-      <div class="media-box">film 5</div>
-      <div class="media-box">film 6</div>
+            <a href="film3.html">
+            <img src="./img/film2.jpeg" alt="Film 2 Cover" class="film-cover">
+            <div class="film-title">Documentary: <i>Reel Brothers</i></div>
+            </a>
+      </div>
+      <div class="media-box">
+            <a href="film4.html">
+            <img src="./img/film2.jpeg" alt="Film 2 Cover" class="film-cover">
+            <div class="film-title">Documentary: <i>Reel Brothers</i></div>
+            </a>
+      </div>
+      <div class="media-box">
+            <a href="film5.html">
+            <img src="./img/film2.jpeg" alt="Film 2 Cover" class="film-cover">
+            <div class="film-title">Documentary: <i>Reel Brothers</i></div>
+            </a>
+      </div>
+      <div class="media-box">
+            <a href="film6.html">
+            <img src="./img/film2.jpeg" alt="Film 2 Cover" class="film-cover">
+            <div class="film-title">Documentary: <i>Reel Brothers</i></div>
+            </a>
+      </div>
     </div>
   </div>
 
@@ -57,12 +85,35 @@
     <h2 data-aos="fade-up">Creative</h2>
 
     <h3 data-aos="fade-up">Paint</h3>
-    <div class="media-container" data-aos="fade-up">
-      <div class="media-box">paint 1</div>
-      <div class="media-box">paint 2</div>
-      <div class="media-box">paint 3</div>
-      <div class="media-box">paint 4</div>
-    </div>
+<div class="media-container" data-aos="fade-up">
+  <div class="media-box">
+      <img src="./img/paint1.jpeg" alt="Painting 1" class="film-cover">
+      <div class="film-title">Acrylic Painting: Monochrome Plate</div>
+  </div>
+
+  <div class="media-box">
+      <img src="./img/paint2.jpeg" alt="Painting 2" class="film-cover">
+      <div class="film-title">Acrylic Painting: Rock Climbing Landscape</div>
+  </div>
+
+  <div class="media-box">
+      <img src="./img/paint6.jpeg" alt="Painting 3" class="film-cover">
+      <div class="film-title">Acrylic Painting: Hiking Landscape</div>
+  </div>
+
+  <div class="media-box">
+      <img src="./img/paint4.jpeg" alt="Painting 4" class="film-cover">
+      <div class="film-title">Watercolor Painting: Vibrant Lightning</i></div>
+  </div>
+
+
+  <div class="media-box">
+      <img src="./img/paint3.jpeg" alt="Painting 6" class="film-cover">
+      <div class="film-title">Acrylic Painting: Colorful Close-Up</div>
+  </div>
+</div>
+
+
 
     <h3 data-aos="fade-up">Design</h3>
     <div class="media-container" data-aos="fade-up">
@@ -134,6 +185,9 @@
 
   <div id="Contact">
     <h2 data-aos="fade-up">Contact Me</h2>
+   
+    <h3>Email: Kelsey.Silverman@colorado.edu</h3> 
+    <p>Feel free to email me with professional inquiries via email, or through my social media accounts linked above.</p>
   </div>
 
   <footer><a href="#Top">Back to Top</a></footer>
@@ -154,6 +208,25 @@
         });
       });
     });
+
+    document.addEventListener("mousemove", (e) => {
+    const sparkle = document.createElement("div");
+    sparkle.className = "sparkle";
+
+    // Random size between 4px and 12px
+    const size = Math.floor(Math.random() * 7) + 4;
+    sparkle.style.width = `${size}px`;
+    sparkle.style.height = `${size}px`;
+
+    sparkle.style.left = `${e.clientX}px`;
+    sparkle.style.top = `${e.clientY}px`;
+
+    document.body.appendChild(sparkle);
+
+    setTimeout(() => {
+      sparkle.remove();
+    }, 1000);
+  });
   </script>
 
 </body>

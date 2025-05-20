@@ -4,62 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Film 2: Documentary</title>
-  <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@300..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="film.css">
+  <link href="https://fonts.googleapis.com/css2?family=Emilys+Candy&family=Lora&display=swap" rel="stylesheet">
 </head>
-<style>
-body {
-background: radial-gradient(circle, #ffbfd1 10%, #ffe8ef 80%);
-}
-h2 {
-  padding: -40%;
-  color: #333;
-}
-p{
-  padding: top-bottom left-right;
-  padding: 2% 15%;
-  font-size: 125%;
-  color: #333;
-  font-weight: bold;
-}
-strong {
-  font-size: 200%;
-  font-family: "Sansita Swashed", cursive;
-}
-
-.film-viewer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 80vh;
-    padding: 0;
-    background-color: #ffe8ef;
-  }
-  
-  .video-wrapper {
-  position: relative;
-  padding-bottom: 56.25%; /* 16:9 aspect ratio */
-  height: 0;
-  overflow: hidden;
-  width: 80%;
-  max-width: 80%;
-  margin: 0 auto; /* centers the video */
-  background: #000;
-  border-radius: 12px;
-  box-shadow: 0 8px 16px #ffabc4;
-}
-
-.video-wrapper iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-  </style>
 <body>
-  <nav>
+  <div class="page-wrapper">
+    <nav>
       <ul>
         <li><a href="website.html#Home">Home</a></li>
         <li><a href="website.html#Films">Films</a></li>
@@ -68,25 +18,29 @@ strong {
         <li><a href="website.html#Social">Social</a></li>
         <li><a href="website.html#Contact">Contact</a></li>
       </ul>
-  </nav>
-<p><strong>Reel Brothers - A Fishing Documentary</strong></p>
-<main class="film-viewer">
-  <div class="video-wrapper">
-    <iframe 
-      src="https://www.youtube.com/embed/2dcqs6KhUKs"
-      title="Reel Brothers"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen>
-    </iframe>
+    </nav>
+
+    <main>
+      <h1><strong>Reel Brothers - A Fishing Documentary</strong></h1>
+
+      <div class="film-viewer">
+        <div class="video-wrapper">
+          <iframe 
+            src="https://www.youtube.com/embed/2dcqs6KhUKs"
+            title="Reel Brothers"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+
+      <p>
+        This film is probably my favorite I have ever made. It is a documentary about the beautiful brotherly relationship between Luka Sullivan (19) and Miko Sullivan (13) and their fishing adventures in the beautiful state of Colorado.
+      </p>
+    </main>
+
+    <footer><a href="website.html">Back to Home</a></footer>
   </div>
-</main>
-
-
-  <p>
-    This film is probably my favorite I have ever made. It is a documentary about the beautiful brotherly relationship between Luka Sullivan (19) and Miko Sullivan (13) and their fishing adventures in the beautiful state of Colorado. 
-  </p>
-
-  <footer><a href="website.html">Back to Home</a></footer>
 </body>
 </html>
