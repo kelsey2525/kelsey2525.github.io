@@ -34,7 +34,23 @@ body::before {
         transparent 66.66%
       );
   }
-  
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.page-wrapper footer {
+  margin-top: auto; /* Pushes footer to bottom when there's not enough content */
+}
+
 body{
 font-family: 'Lora', sans-serif;
     background: radial-gradient(circle, #faece8 10%, #ffb1c2 80%);
@@ -112,11 +128,11 @@ font-family: 'Lora', sans-serif;
     /* PARAGRAPH */
     p {
       font-family: 'Lora', serif;
-      font-size: 1.125rem;
+      font-size: 1rem;
       line-height: 1.6;
-      padding: 3vw;
+      padding: 1vw;
       text-align: center;
-      margin-top: 1rem;
+      margin: 2.8rem;
       color: #333;
     }
 
@@ -134,7 +150,7 @@ font-family: 'Lora', sans-serif;
       height: 0;
       overflow: hidden;
       width: 80%;
-      max-width: 900px;
+      max-width: 85%;
       background: #000;
       border-radius: 12px;
       box-shadow: 0 8px 16px #ffabc4;
@@ -164,36 +180,60 @@ font-family: 'Lora', sans-serif;
         border-radius: .8vw;
       }
 
-    
+main {
+  flex: 1; /* this allows the main content to take up all available space and push the footer down */
+}
 
-     
-  footer {
-    text-align: center;
-    font-size: 1.5vw;
-    background-color: #faece8; /* Same as nav */
-    color: #a42440; /* Same as nav link text */
-    padding: 2vw;
-    font-family: 'Lora', sans-serif;
-    font-weight: bold;
-    margin: 0;
-    box-shadow: 0 .6vw .8vw rgba(255, 251, 235, 0.05);
-    transition: all 0.3s ease;
+footer {
+  text-align: center;
+  font-size: 1.3vw; /* Match nav font size */
+  background-color: #faece8;
+  color: #a42440;
+  padding: 1.4vw 2vw; /* Match nav ul padding */
+  font-family: 'Lora', sans-serif;
+  font-weight: bold;
+  margin: 0;
+  box-shadow: 0 .6vw .8vw rgba(255, 251, 235, 0.05);
+  transition: all 0.3s ease;
+}
+
+footer a {
+  color: #a42440;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5vw 1vw;
+  border-radius: .8vw;
+  transition: all 0.3s ease;
+  display: inline-block; /* Helps hover styles apply more cleanly */
+}
+
+footer a:hover {
+  background-color: #dd5e79;
+  color: white;
+  padding: 0.7vw 1.3vw; /* Match nav hover */
+}
+
+ 
+  /* Prevent visited links from turning purple */
+  footer a:visited {
+    color: #a42440;
   }
   
-    /* RESPONSIVENESS */
-    @media (max-width: 768px) {
-      p {
-        padding: 0 10%;
-      }
+ @media (max-width: 768px) {
+  p {
+    padding: 0 10%;
+  }
 
-      nav a {
-        font-size: 1.1rem;
-      }
+  nav a,
+  footer {
+    font-size: 1rem;
+  }
 
-      strong {
-        font-size: 1.7rem;
-      }
-    }
+  strong {
+    font-size: 1.7rem;
+  }
+}
+
 
  
  
