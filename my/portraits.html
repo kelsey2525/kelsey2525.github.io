@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portrait Photography</title>
+  <link rel="stylesheet" href="photo.css">
+  <link href="https://fonts.googleapis.com/css2?family=Emilys+Candy&family=Lora&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="page-wrapper">
+    <nav>
+      <ul>
+        <li><a href="website.html#Home">Home</a></li>
+        <li><a href="website.html#Films">Films</a></li>
+        <li><a href="website.html#Creative">Creative</a></li>
+        <li><a href="website.html#About">About</a></li>
+        <li><a href="website.html#Social">Social</a></li>
+        <li><a href="website.html#Contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <h1><strong>Portrait Photography</strong></h1>
+
+      <div class="film-viewer">
+        <div class="photo-gallery">
+          <img src="img/portrait1.JPG" alt="Portrait 1">
+          <img src="img/portrait2.JPG" alt="Portrait 2">
+          <img src="images/portrait3.jpg" alt="Portrait 3">
+        </div>
+      </div>
+
+      <p>
+        These portraits capture the essence of emotion, expression, and presence. Each photo is part of an ongoing exploration into human identity and visual storytelling.
+      </p>
+    </main>
+
+    <footer><a href="website.html">Back to Home</a></footer>
+  </div>
+
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute("href")).scrollIntoView({
+          behavior: "smooth"
+        });
+      });
+    });
+
+    document.addEventListener("mousemove", (e) => {
+    const sparkle = document.createElement("div");
+    sparkle.className = "sparkle";
+
+    // Random size between 4px and 12px
+    const size = Math.floor(Math.random() * 7) + 4;
+    sparkle.style.width = `${size}px`;
+    sparkle.style.height = `${size}px`;
+
+    sparkle.style.left = `${e.clientX}px`;
+    sparkle.style.top = `${e.clientY}px`;
+
+    document.body.appendChild(sparkle);
+
+    setTimeout(() => {
+      sparkle.remove();
+    }, 1000);
+  });
+
+  // Create modal container and image
+  const modal = document.createElement('div');
+  modal.classList.add('image-modal');
+  modal.innerHTML = `
+    <span class="close-button">&times;</span>
+    <img class="modal-img" src="" alt="Fullscreen image">
+  `;
+  document.body.appendChild(modal);
+
+  const modalImg = modal.querySelector('.modal-img');
+  const closeBtn = modal.querySelector('.close-button');
+
+  // Only apply to enlargeable images
+  document.querySelectorAll('img.enlargeable').forEach(img => {
+    img.addEventListener('click', () => {
+      modalImg.src = img.src;
+      modal.classList.add('show');
+    });
+  });
+
+  closeBtn.addEventListener('click', () => {
+    modal.classList.remove('show');
+  });
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) modal.classList.remove('show');
+  });
+
+  </script>
+
+</body>
+</html>

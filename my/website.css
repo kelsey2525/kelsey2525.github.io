@@ -1,0 +1,543 @@
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: -10;
+  
+    background-image: 
+      /* Vertical lines */
+      linear-gradient(to right, 
+        transparent 33.33%, 
+        rgba(255, 255, 255, 0.2) 33.33%, 
+        rgba(255, 255, 255, 0.2) 34.00%, 
+        transparent 34.00%, 
+  
+        transparent 66%,
+        rgba(255, 255, 255, 0.2) 66%, 
+        rgba(255, 255, 255, 0.2) 66.66%, 
+        transparent 66.66%
+      ),
+      /* Horizontal lines */
+      linear-gradient(to bottom, 
+        transparent 33.33%, 
+        rgba(255, 255, 255, 0.2) 33.33%, 
+        rgba(255, 255, 255, 0.2) 34.33%, 
+        transparent 34.33%, 
+  
+        transparent 65.66%,
+        rgba(255, 255, 255, 0.2) 65.66%, 
+        rgba(255, 255, 255, 0.2) 66.66%, 
+        transparent 66.66%
+      );
+  }
+  
+body{
+font-family: 'Lora', sans-serif;
+    background: radial-gradient(circle, #faece8 10%, #ffb1c2 80%);
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    max-width: 100vw;
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+
+  header {
+    text-align: center;
+    padding: 6vw;
+  }
+  
+  header h1 {
+    font-family: 'Emilys Candy', cursive;
+    font-size: 6vw;
+    margin: 0;
+    position: relative;
+    display: inline-block;
+    padding: 2vw 3vw;
+    color: #dd5e79; /* Deep rose, matches your nav links */
+    
+  }
+  
+  header p {
+    color: #e16983;
+    margin-top: 3vw;
+    margin-bottom: -3vw;
+    font-size: 1.5vw;
+    
+  }
+
+  .corner {
+    position: absolute;
+    width: 2vw;
+    height: 2vw;
+    border: .4vw solid #faece8;
+  }
+  
+  .top-left {
+    top: 0;
+    left: 0;
+    border-right: none;
+    border-bottom: none;
+  }
+  
+  .top-right {
+    top: 0;
+    right: 0;
+    border-left: none;
+    border-bottom: none;
+  }
+  
+  .bottom-left {
+    bottom: 0;
+    left: 0;
+    border-right: none;
+    border-top: none;
+  }
+  
+  .bottom-right {
+    bottom: 0;
+    right: 0;
+    border-left: none;
+    border-top: none;
+  }
+  
+  .custom-paragraph {
+    font-family: 'Lora', cursive;
+    text-align: center;
+    color: #333;
+    margin-top: 1vw;
+    margin-bottom: 3vw;
+    line-height: 2.2vw;
+    word-wrap: break-word;
+    font-size: 1.1vw; /* Adjust font size for smaller screens */
+    padding: 0 1vw; /* Add padding to prevent text from touching the edges */
+  }
+
+  p {
+    font-family: 'Lora', cursive;
+    text-align: center;
+    color: #333;
+    margin-top: 2vw;
+    margin-bottom: 3vw;
+    line-height: 1.4em;
+    word-wrap: break-word;
+    font-size: 1vw; /* Adjust font size for smaller screens */
+    padding: 0 1vw; /* Add padding to prevent text from touching the edges */
+  }
+  
+  .about-me {
+    margin-top: 1vw;
+    margin-bottom: 3vw;
+    line-height: 2.2vw;
+    word-wrap: break-word;
+    font-size: 1.6vw; /* Adjust font size for smaller screens */
+    padding: 0 1vw;
+  }
+  /* Adjust the font size for larger screens */
+  @media (min-width: 768px) {
+    p {
+      font-size: 1vw;
+    }
+  }
+  
+  p + p {
+    margin-top: -5.2vw; /* pull second p closer to first */
+  }
+  
+  nav {
+    width: 100vw;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    font-size: clamp(1rem, 1.3vw, 1.5rem);
+    background-color: #faece8;
+    box-shadow: 0 .6vw .8vw rgba(255, 251, 235, 0.05);
+  }
+  
+  nav ul {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 1.4vw 2vw;
+    margin: 0;
+    width: 100%;
+    max-width: 80vw;
+    gap: 2rem;
+  }
+  
+  nav li {
+    margin: 0;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #a42440;
+    font-weight: bold;
+    padding: clamp(0.3rem, 0.5vw, 0.8rem) clamp(0.5rem, 1vw, 1.2rem);
+border-radius: clamp(0.4rem, 0.8vw, 1rem);
+    border-radius: .8vw;
+    transition: all 0.3s ease;
+  }
+  
+  nav a:hover {
+    background-color: #dd5e79;
+    color: white;
+    padding: clamp(0.4rem, 0.7vw, 1rem) clamp(0.7rem, 1.3vw, 1.5rem);
+  }
+  
+  
+  h2 {
+    width: 100vw;
+    margin: 0;
+    padding: 2vw 0;
+    box-sizing: border-box;
+    background-color: #ffb1c2;
+    color: #901b34;
+    text-align: center;
+    font-size: 2.5vw;
+    font-family: 'Lora', serif;
+    scroll-margin-top: 4.5vw;
+  }
+
+  [id] {
+    scroll-margin-top: 4.5vw;
+    margin-bottom: 2vw;
+  }
+  
+  h3 {
+    font-family: 'Lora', serif;
+    margin: 0;
+    margin-top: 1vw;
+    padding: 1.5vw;
+    text-align: center;
+  }
+  
+  .social-link h3 {
+    font-size: 1.8vw;
+    margin-bottom: 1vw;
+    margin-top: 0vw;
+    text-align: center;
+  }
+
+ .image-modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.image-modal.show {
+  display: flex;
+}
+
+.modal-img {
+  max-width: 90vw;
+  max-height: 90vh;
+  border: 4px solid white;
+  box-shadow: 0 0 20px #fff;
+}
+
+.close-button {
+  position: absolute;
+  top: 2vw;
+  right: 3vw;
+  font-size: 3vw;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+  
+  .media-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2vw;
+    padding: 2vw 10vw;
+  }
+  
+  .media-box {
+  flex: 1 1 calc(33.33% - 2vw);
+  background-color: white;
+  border: 0.2vw solid #faece8;
+  border-radius: 1.2vw;
+  padding: 1vw;
+  margin-bottom: 2vw;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: auto; /* Ensure the height only fits content */
+}
+
+#Films .aspect-16x9 {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 aspect ratio */
+  overflow: hidden;
+  border-radius: inherit;
+}
+
+#Films .aspect-16x9 img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+  
+  .media-box:hover {
+    transform: translateY(-.5vw);
+    box-shadow: 0 .8vw 1.6vw #ffb1c2;
+  }
+  
+  @media (max-width: 900px) {
+    .media-box {
+      flex: 1 1 45%;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .media-box {
+      flex: 1 1 100%;
+    }
+  }
+  
+  .film-cover {
+  width: 100%;
+  height: auto; /* <-- this is the key line */
+  border-radius: .8vw;
+  margin-bottom: 0.5vw;
+  display: block;
+}
+  
+  .film-title {
+    font-weight: bold;
+    font-family: 'Lora', serif;
+    color: #333;
+  }
+
+.photo-category-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.photo-category-box {
+  position: relative;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.photo-category-box:hover {
+  transform: scale(1.03);
+}
+
+.photo-category-box .overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.4);
+  color: white;
+  text-align: center;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  font-family: "Lora", serif;
+}
+
+
+
+.about-headshot-frame {
+  width: 60%;
+  margin: 2rem auto 0 auto; /* top margin added */
+  padding: 1rem;
+  border: .2rem solid #ccc; /* Adjust color as needed */
+  border-radius: 12px;
+  box-sizing: border-box;
+}
+
+.about-headshot {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.about-text {
+  max-width: 700px;
+  text-align: left;
+}
+
+
+  #Social {
+    text-align: center;
+    padding: 1vw;
+  }
+  
+  #Social h2 {
+    font-size: 2.5vw;
+    margin-bottom: 0vw;
+  }
+
+  #Social p {
+    margin-bottom: 2vw;
+  }
+  
+  .social-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3vw;
+    padding: 0;
+  }
+  
+  .social-link {
+    background-color: white;
+    border: .2vw solid #faece8;
+    border-radius: 1vw;
+    width: 12vw;
+    padding: 1.5vw;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+  }
+  
+  .social-link:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 .8vw 1.6vw #ffb1c2;
+  }
+  
+  .social-link a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .social-link h3 {
+    font-size: 1.6vw;
+    margin: 0;
+    text-align: center;
+  }
+  
+  .social-link img {
+    width: 4vw;
+  }
+  
+ footer {
+  text-align: center;
+  font-size: 1.3vw; /* Desktop scaling */
+  background-color: #faece8;
+  color: #a42440;
+  padding: 1.4vw 2vw;
+  font-family: 'Lora', sans-serif;
+  font-weight: bold;
+  margin: 0;
+  box-shadow: 0 .6vw .8vw rgba(255, 251, 235, 0.05);
+  transition: all 0.3s ease;
+}
+
+/* Responsive fix: override font-size on smaller screens */
+@media (max-width: 768px) {
+  footer {
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+  }
+}
+
+footer a {
+  color: #a42440;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5vw 1vw;
+  border-radius: .8vw;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+footer a:hover {
+  background-color: #dd5e79;
+  color: white;
+  padding: 0.7vw 1.3vw;
+}
+
+footer a:visited {
+  color: #a42440;
+}
+
+  
+  @media (max-width: 768px) {
+  header h1 {
+    font-size: 8vw;
+  }
+
+  header p {
+    font-size: 4.5vw;
+    line-height: 1.5;
+  }
+
+  h2, #Social h2 {
+    font-size: 6vw;
+    padding: 1vw 0;
+    margin: 4vw 0;
+  }
+
+  h3 {
+    font-size: 3vw;
+  }
+
+  nav a {
+    font-size: 4vw;
+  }
+
+  html {
+    scroll-padding-top: 20vw; /* ensures nav links align properly on mobile */
+  }
+}
+
+.sparkle {
+  position: fixed;
+  background: radial-gradient(circle, #ffd1dc 0%, #fff 60%);
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.9;
+  transform: translate(-50%, -50%);
+  animation: sparkle-fade 1.8s ease-out forwards;
+  z-index: 9999;
+  mix-blend-mode: screen; /* Adds a soft glow effect */
+}
+
+
+@keyframes sparkle-fade {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0.5);
+    opacity: 0;
+  }
+}
