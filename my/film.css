@@ -201,23 +201,17 @@ footer a {
   color: #a42440;
   text-decoration: none;
   font-weight: bold;
-  padding: 0.5vw 1vw;
+  padding: .5rem;
   border-radius: .8vw;
   transition: all 0.3s ease;
-  display: inline-block; /* Helps hover styles apply more cleanly */
+  display: inline-block;
 }
 
 footer a:hover {
   background-color: #dd5e79;
   color: white;
-  padding: 0.7vw 1.3vw; /* Match nav hover */
+  
 }
-
- 
-  /* Prevent visited links from turning purple */
-  footer a:visited {
-    color: #a42440;
-  }
   
  @media (max-width: 768px) {
   p {
