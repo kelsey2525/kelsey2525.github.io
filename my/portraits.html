@@ -25,8 +25,8 @@
 
       <div class="film-viewer">
         <div class="photo-gallery">
-          <img src="img/portrait1.JPG" alt="Portrait 1">
-          <img src="img/portrait2.JPG" alt="Portrait 2">
+          <img src="img/portrait/portrait1.JPG" alt="Portrait 1">
+          <img src="img/portrait/portrait2.JPG" alt="Portrait 2">
           <img src="images/portrait3.jpg" alt="Portrait 3">
         </div>
       </div>
@@ -86,6 +86,7 @@
   document.body.appendChild(modal);
 
   const modalImg = modal.querySelector('.modal-img');
+  modalImg.style.display = 'none';
   const closeBtn = modal.querySelector('.close-button');
 
   // Only apply to enlargeable images
