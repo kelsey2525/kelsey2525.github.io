@@ -237,7 +237,7 @@ footer a:hover {
   transform: translate(-50%, -50%);
   animation: sparkle-fade 1.8s ease-out forwards;
   z-index: 9999;
-  mix-blend-mode: screen; /* Adds a soft glow effect */
+  mix-blend-mode: screen; /* Adds glow effect */
 }
 
 
