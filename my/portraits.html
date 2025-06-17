@@ -25,15 +25,24 @@
 
       <div class="film-viewer">
         <div class="photo-gallery">
-          <img src="img/portrait/portrait1.JPG" alt="Portrait 1">
+          <img src="img/portrait/portrait6.JPG" alt="Portrait 1">
           <img src="img/portrait/portrait2.JPG" alt="Portrait 2">
-          <img src="images/portrait3.jpg" alt="Portrait 3">
+          <img src="img/portrait/portrait3.jpeg" alt="Portrait 3">
+          <img src="img/portrait/portrait4.jpeg" alt="Portrait 4">
+          <img src="img/portrait/portraitA.jpeg" alt="Portrait 5">
+          <img src="img/portrait/portrait1.JPG" alt="Portrait 6">
+          <img src="img/portrait/portrait7.jpeg" alt="Portrait 7">
+          <img src="img/portrait/portrait15.JPG" alt="Portrait 8">
+          <img src="img/portrait/portrait5.jpeg" alt="Portrait 9">
+          <img src="img/portrait/portrait9.jpeg" alt="Portrait 10">
+          <img src="img/portrait/portrait10.jpeg" alt="Portrait 11">
+          <img src="img/portrait/portrait11.jpeg" alt="Portrait 12">
+          <img src="img/portrait/portrait12.jpeg" alt="Portrait 13">
+          <img src="img/portrait/portrait13.jpeg" alt="Portrait 14">
+          <img src="img/portrait/portrait16.jpeg" alt="Portrait 15">
+          <img src="img/portrait/portrait8.JPG" alt="Portrait 16">
         </div>
       </div>
-
-      <p>
-        These portraits capture the essence of emotion, expression, and presence. Each photo is part of an ongoing exploration into human identity and visual storytelling.
-      </p>
     </main>
 
     <footer><a href="website.html">Back to Home</a></footer>
@@ -90,12 +99,16 @@
   const closeBtn = modal.querySelector('.close-button');
 
   // Only apply to enlargeable images
-  document.querySelectorAll('img.enlargeable').forEach(img => {
-    img.addEventListener('click', () => {
-      modalImg.src = img.src;
-      modal.classList.add('show');
-    });
+ // Automatically apply enlargeable functionality to all images in the photo gallery
+document.querySelectorAll('.photo-gallery img').forEach(img => {
+  img.classList.add('enlargeable'); // optional, for styling if needed
+  img.addEventListener('click', () => {
+    modalImg.src = img.src;
+    modal.classList.add('show');
+    modalImg.style.display = 'block';
   });
+});
+
 
   closeBtn.addEventListener('click', () => {
     modal.classList.remove('show');
@@ -104,7 +117,10 @@
   modal.addEventListener('click', (e) => {
     if (e.target === modal) modal.classList.remove('show');
   });
-
+window.addEventListener("pageshow", () => {
+  modal.classList.remove("show");
+  modalImg.style.display = "none";
+});
   </script>
 
 </body>

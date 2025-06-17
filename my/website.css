@@ -49,9 +49,25 @@ font-family: 'Lora', sans-serif;
     overflow-y: scroll;
   }
 
-  html, body {
+html {
+  scroll-behavior: smooth;
+
+}
+
+html, body {
   height: 100%;
   margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  flex: 1;
+}
+
+main {
+  flex: 1;
 }
 
 .page-wrapper {
@@ -75,8 +91,8 @@ main {
     margin: 0;
     position: relative;
     display: inline-block;
-    padding: 2vw 3vw;
-    color: #dd5e79; /* Deep rose, matches your nav links */
+    padding: 0vw 3vw;
+    color: #d95572; /* Deep rose, matches your nav links */
     
   }
   
@@ -96,29 +112,29 @@ main {
   }
   
   .top-left {
-    top: 0;
-    left: 0;
+    top: -10px;
+    left: -10px;
     border-right: none;
     border-bottom: none;
   }
   
   .top-right {
-    top: 0;
-    right: 0;
+    top: -10px;
+    right: -10px;
     border-left: none;
     border-bottom: none;
   }
   
   .bottom-left {
-    bottom: 0;
-    left: 0;
+    bottom: -10px;
+    left: -10px;
     border-right: none;
     border-top: none;
   }
   
   .bottom-right {
-    bottom: 0;
-    right: 0;
+    bottom: -10px;
+    right: -10px;
     border-left: none;
     border-top: none;
   }
@@ -129,10 +145,10 @@ main {
     color: #333;
     margin-top: 1vw;
     margin-bottom: 3vw;
-    line-height: 2.2vw;
+    line-height: 1.8em;
     word-wrap: break-word;
-    font-size: 1.1vw; /* Adjust font size for smaller screens */
-    padding: 0 1vw; /* Add padding to prevent text from touching the edges */
+    font-size: 18px; /* Adjust font size for smaller screens */
+    padding: 0 35px; /* Add padding to prevent text from touching the edges */
   }
 
   p {
@@ -143,7 +159,7 @@ main {
     margin-bottom: 3vw;
     line-height: 1.4em;
     word-wrap: break-word;
-    font-size: 1vw; /* Adjust font size for smaller screens */
+    font-size: .75em; /* Adjust font size for smaller screens */
     padding: 0 1vw; /* Add padding to prevent text from touching the edges */
   }
   
@@ -199,7 +215,7 @@ main {
     color: #a42440;
     font-weight: bold;
     padding: clamp(0.3rem, 0.5vw, 0.8rem) clamp(0.5rem, 1vw, 1.2rem);
-border-radius: clamp(0.4rem, 0.8vw, 1rem);
+    border-radius: clamp(0.4rem, 0.8vw, 1rem);
     border-radius: .8vw;
     transition: all 0.3s ease;
   }
@@ -225,7 +241,6 @@ border-radius: clamp(0.4rem, 0.8vw, 1rem);
   }
 
   [id] {
-    scroll-margin-top: 4.5vw;
     margin-bottom: 2vw;
   }
   
@@ -276,28 +291,27 @@ border-radius: clamp(0.4rem, 0.8vw, 1rem);
   font-weight: bold;
 }
 
-  
-  .media-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2vw;
-    padding: 2vw 10vw;
-  }
-  
-  .media-box {
-  flex: 1 1 calc(33.33% - 2vw);
+.media-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns by default */
+  gap: 2vw;
+  padding: 2vw 4vw;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.media-box {
   background-color: white;
   border: 0.2vw solid #faece8;
   border-radius: 1.2vw;
   padding: 1vw;
-  margin-bottom: 2vw;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  height: auto; /* Ensure the height only fits content */
+  flex: 0 1 calc(33.333% - 2vw); /* This was repeated separately */
 }
 
 #Films .aspect-16x9 {
@@ -323,18 +337,27 @@ border-radius: clamp(0.4rem, 0.8vw, 1rem);
     box-shadow: 0 .8vw 1.6vw #ffb1c2;
   }
   
-  @media (max-width: 900px) {
-    .media-box {
-      flex: 1 1 45%;
-    }
+
+@media (max-width: 900px) {
+  .media-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
   }
-  
-  @media (max-width: 600px) {
-    .media-box {
-      flex: 1 1 100%;
-    }
+}
+
+@media (max-width: 600px) {
+  .media-container {
+    grid-template-columns: 1fr;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    gap: 2rem;
   }
-  
+
+  .media-box {
+    margin: 0.5rem 0;
+  }
+}
+
+
   .film-cover {
   width: 100%;
   height: auto; /* <-- this is the key line */
@@ -382,10 +405,77 @@ border-radius: clamp(0.4rem, 0.8vw, 1rem);
   font-family: "Lora", serif;
 }
 
+.dance-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1vw;
+  max-width: 60%;
+  margin: 0 auto;
+  gap: 1vw;
+}
+
+.dance-content {
+  display: flex;
+  flex-direction: column; /* Stack image and text */
+  gap: 1vw;
+  width: 100%;
+}
+
+.dance-content img {
+  width: 100%;
+  border-radius: 1vw;
+  border: 0.3vw solid #faece8;
+  object-fit: cover;
+  margin: 0 auto; /* <-- This centers the image horizontally */
+  display: block; /* good practice for images inside blocks */
+}
+
+
+.dance-content .media-box {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 1rem;
+}
+
+.dance-content p {
+  font-family: 'Lora', serif;
+  font-size: .8rem;
+  line-height: 1.6;
+  text-align: center;
+  margin: 0;
+}
+
+/* Social links grid layout */
+.dance-social-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2vw; /* space between icons */
+  width: 100%;
+  flex-wrap: nowrap; /* prevent wrapping */
+  margin-top: 1vw;
+}
+
+
+
+.dance-social-links .social-link img {
+  width: 5vw;
+  max-width: 60px;
+}
+
+/* Disable hover effects for specific media boxes */
+.no-hover:hover {
+  transform: none;
+  box-shadow: none;
+  filter: none;
+  cursor: default;
+}
 
 
 .about-headshot-frame {
-  width: 60%;
+  width: 40%;
   margin: 2rem auto 0 auto; /* top margin added */
   padding: 1rem;
   border: .3rem solid #a42440; /* Adjust color as needed */
@@ -410,6 +500,8 @@ border-radius: clamp(0.4rem, 0.8vw, 1rem);
   #Social {
     text-align: center;
     padding: 1vw;
+    margin-bottom: 0; /* or fine-tune */
+    padding-bottom: 2vw; /* if needed */
   }
   
   #Social h2 {
