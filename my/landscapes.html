@@ -123,6 +123,17 @@ document.querySelectorAll('.photo-gallery img').forEach(img => {
   modal.addEventListener('click', (e) => {
     if (e.target === modal) modal.classList.remove('show');
   });
+
+window.onload = () => {
+  const gallery = document.querySelector('.photo-gallery');
+  const rowHeight = 10 + parseFloat(getComputedStyle(gallery).getPropertyValue('gap'));
+  gallery.querySelectorAll('img').forEach(img => {
+    const imgHeight = img.getBoundingClientRect().height;
+    const span = Math.ceil(imgHeight / rowHeight);
+    img.style.setProperty('--span', span);
+  });
+};
+
 window.addEventListener("pageshow", () => {
   modal.classList.remove("show");
   modalImg.style.display = "none";

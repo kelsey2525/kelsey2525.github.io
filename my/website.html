@@ -106,41 +106,6 @@
   <div id="Creative">
     <h2 data-aos="fade-up">Creative</h2>
 
-    <h3 data-aos="fade-up">Paint</h3>
-<div class="media-container" data-aos="fade-up">
-  <div class="media-box">
-      <img src="./img/paint1.jpeg" alt="Painting 1" class="film-cover enlargeable">
-      <div class="film-title">Acrylic Painting: Monochrome Plate</div>
-  </div>
-
-  <div class="media-box">
-      <img src="./img/paint2.jpeg" alt="Painting 2" class="film-cover enlargeable">
-      <div class="film-title">Acrylic Painting: Rock Climbing Landscape</div>
-  </div>
-
-  <div class="media-box">
-      <img src="./img/paint6.jpeg" alt="Painting 3" class="film-cover enlargeable">
-      <div class="film-title">Acrylic Painting: Hiking Landscape</div>
-  </div>
-
-  <div class="media-box">
-      <img src="./img/paint4.jpeg" alt="Painting 4" class="film-cover enlargeable">
-      <div class="film-title">Watercolor Painting: Vibrant Lightning</div>
-  </div>
-
-
-  <div class="media-box">
-      <img src="./img/paint3.jpeg" alt="Painting 6" class="film-cover enlargeable">
-      <div class="film-title">Acrylic Painting: Colorful Close-Up</div>
-  </div>
-
-  <div class="media-box">
-      <img src="./img/paint7.jpeg" alt="Painting 7" class="film-cover enlargeable">
-      <div class="film-title">Acrylic Painting: Charcuterie</div>
-  </div>
-
-</div>
-
   <section id="photography">
   <h3 data-aos="fade-up">Photography</h3>
 <div class="media-container" data-aos="fade-up">
@@ -166,6 +131,44 @@
   </div>
 </div>
   </section>
+
+
+    <h3 data-aos="fade-up">Painting</h3>
+<div class="media-container" data-aos="fade-up">
+  <div class="media-box">
+      <img src="./img/paint1.jpeg" alt="Painting 1" class="film-cover enlargeable">
+      <div class="film-title">Acrylic Painting: Monochrome Plate</div>
+  </div>
+
+  <div class="media-box">
+      <img src="./img/paint2.jpeg" alt="Painting 2" class="film-cover enlargeable">
+      <div class="film-title">Acrylic Painting: Rock Climbing Landscape</div>
+  </div>
+
+  <div class="media-box">
+      <img src="./img/paint6.jpeg" alt="Painting 3" class="film-cover enlargeable">
+      <div class="film-title">Acrylic Painting: Hiking Landscape</div>
+  </div>
+
+  <div class="media-box">
+      <img src="./img/paint4.jpeg" alt="Painting 4" class="film-cover enlargeable">
+      <div class="film-title">Watercolor Painting: Vibrant Lightning</div>
+  </div>
+  
+
+
+  <div class="media-box">
+      <img src="./img/paint3.jpeg" alt="Painting 6" class="film-cover enlargeable">
+      <div class="film-title">Acrylic Painting: Colorful Close-Up</div>
+  </div>
+
+  <div class="media-box">
+      <img src="./img/paint7.jpeg" alt="Painting 7" class="film-cover enlargeable">
+      <div class="film-title">Acrylic Painting: Charcuterie</div>
+  </div>
+
+</div>
+
 
   
   <h3 data-aos="fade-up">Dance</h3>
@@ -266,7 +269,7 @@
     <p>Feel free to message me with professional inquiries via email, or through my social media accounts linked above.</p>
   </div>
 </main>
-  <footer><a href="#Top">Back to Top</a></footer>
+  <footer><a href="#top" id="back-to-top">Back to Top</a></footer>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
@@ -303,6 +306,15 @@
       sparkle.remove();
     }, 1000);
   });
+
+document.getElementById('back-to-top').addEventListener('click', function(e) {
+  e.preventDefault();
+  const offset = 60; // height of your sticky nav in px
+  window.scrollTo({
+    top: 0, // scroll to very top
+    behavior: 'smooth'
+  });
+});
 
   // Create modal container and image
   const modal = document.createElement('div');
